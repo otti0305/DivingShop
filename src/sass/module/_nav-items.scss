@@ -1,0 +1,11 @@
+@use "global" as *;
+
+.nav-items {
+  margin-top: rem(9);
+  @include mq("md") {
+    display: flex;
+    gap: rem(120);
+    margin-top: rem(-3);
+  }
+}
+

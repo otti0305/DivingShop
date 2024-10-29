@@ -1,0 +1,39 @@
+@use "global" as *;
+
+.view-link {
+  background-color: $green-accent;
+  color: $white;
+  font-family: $font-family-en;
+  display: inline-block;
+  font-size: rem(14);
+  line-height: rem(22);
+  padding-top: rem(16);
+  padding-right: rem(88);
+  padding-bottom: rem(16);
+  padding-left: rem(40);
+  position: relative;
+}
+
+.view-link::before {
+  content: "";
+  width: rem(42);
+  height: rem(8);
+  background-image: url(/assets/images/common/view-more.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  position: absolute;
+  right: rem(40);
+  top: 47%;
+  transform: translateY(-50%);
+}
+
+.view-link::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border: 1px solid $green-accent;
+  position: absolute;
+  right: rem(-4);
+  bottom: rem(-4);
+}

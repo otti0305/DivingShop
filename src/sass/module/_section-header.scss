@@ -1,0 +1,26 @@
+@use "global" as *;
+
+.section-header {
+  display: flex;
+  flex-direction: column;
+  gap: rem(4);
+}
+
+.section-header__en {
+  font-family: $font-family-en;
+  font-weight: $normal;
+  font-size: rem(32);
+  line-height: rem(40);
+}
+
+.section-header__en span {
+  color: $green-accent;
+}
+
+.section-header__ja {
+  color: $green-accent;
+  font-size: rem(12);
+  line-height: rem(18);
+}
+
+

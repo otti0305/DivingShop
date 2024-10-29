@@ -18,6 +18,13 @@
   <meta property="og:description" content="" />
   <!-- ファビコン -->
   <link rel="”icon”" href="" />
+  <!-- フォント -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gotu&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
   <!-- css -->
   <link rel="stylesheet" href="./assets/css/style.css" />
   <!-- JavaScript -->
@@ -25,16 +32,140 @@
   <script defer src="./assets/js/script.js"></script>
 </head>
 <body>
-  <header>
+  <header class="header">
+    <div class="header__inner inner">
+      <div class="header__content">
+        <h1 class="header__logo">
+          <a href="#">
+            <img src="/assets/images/common/logo.png" alt="ロゴ画像">
+          </a>
+        </h1>
+      </div>
+
+    </div>
 
   </header>
   <main>
     <div class="inner">
-      <p class="test">変更のテスト</p>
+
+      <!-- section-title -->
+      <div class="section-header">
+        <h2 class="section-header__en"><span>C</span>ampaign</h2>
+        <div class="section-header__ja">キャンペーン</div>
+      </div>
+
+      <!-- view-link -->
+      <a href="#" class="view-link">View more</a>
+
+      <!-- blog-card -->
+      <!-- <a href="#" class="blog-card">
+        <div class="blog-card__img">
+          <img src="/assets/images/common/blog-img1.jpg" alt="ライセンス取得">
+        </div>
+        <div class="blog-card__body">
+          <div class="blog-card__date">
+            <time datetime="2024/10/27">2023/11/17</time></div>
+          <h3 class="blog-card__title">ライセンス取得</h3>
+        </div>
+        <p class="blog-card__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+          ここにテキストが入ります。ここにテキストが入ります。ここにテキスト</p>
+      </a> -->
+
+      <!-- voice-card -->
+      <!-- <a href="#" class="voice-card">
+        <div class="voice-card__head">
+          <div class="voice-card__info">
+            <div class="voice-card__meta">
+              <div class="voice-card__gender">20代(女性)</div>
+              <div class="voice-card__category">ライセンス講習</div>
+            </div>
+            <h3 class="voice-card__title">ここにタイトルが入ります。ここにタイトル</h3>
+          </div>
+          <div class="voice-card__img">
+            <img src="/assets/images/common/voice-img1.jpg" alt="女性の写真">
+          </div>
+        </div>
+        <div class="voice-card__body">
+          <div class="voice-card__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
+            ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
+            ここにテキストが入ります。ここにテキストが入ります。</div>
+        </div>
+      </a> -->
+
+      <!-- campaign-card -->
+      <a href="#" class="campaign-card">
+        <div class="campaign-card__img">
+          <img src="/assets/images/common/campaign1.png" alt="campaignのイメージ写真">
+        </div>
+        <div class="campaign-card__head">
+          <div class="campaign-card__category">ライセンス講習</div>
+          <h3 class="campaign-card__title">ライセンス取得</h3>
+        </div>
+        <div class="campaign-card__body">
+          <p class="campaign-card__catch">全部コミコミ(お一人様)</p>
+          <div class="campaign-card__price">
+            <div class="campaign-card__old-price">¥56,000</div>
+            <div class="campaign-card__new-price">¥46,000</div>
+          </div>
+        </div>
+      </a>
+
+
     </div>
   </main>
-  <footer>
-
+  <footer class="footer top__footer">
+    <div class="footer__inner inner">
+      <div class="footer__content">
+        <div class="footer__logo">
+          <a href="#">
+            <img src="/assets/images/common/logo.png" alt="ロゴ画像">
+          </a>
+        </div>
+        <div class="footer__sns">
+          <a href="#" class="sns__icon">
+            <img src="/assets/images/common/facebook.png" alt="facebookのアイコン">
+          </a>
+          <a href="#" class="sns__icon">
+            <img src="/assets/images/common/instagram.png" alt="Instagramのアイコン">
+          </a>
+        </div>
+      </div>
+      <div class="footer__nav">
+        <div class="nav-items">
+          <ul class="nav-item">
+            <li class="nav__list icon"><a href="#">キャンペーン</a></li>
+            <li class="nav__list"><a href="#">ライセンス取得</a></li>
+            <li class="nav__list"><a href="#">貸切体験ダイビング</a></li>
+            <li class="nav__list"><a href="#">ナイトダイビング</a></li>
+            <li class="nav__list icon"><a href="#">私たちについて</a></li>
+          </ul>
+          <ul class="nav-item">
+            <li class="nav__list icon"><a href="#">ダイビング情報</a></li>
+            <li class="nav__list"><a href="#">ライセンス講習</a></li>
+            <li class="nav__list"><a href="#">体験ダイビング</a></li>
+            <li class="nav__list"><a href="#">ファンダイビング</a></li>
+            <li class="nav__list icon"><a href="#">ブログ</a></li>
+          </ul>
+        </div>
+        <div class="nav-items">
+          <ul class="nav-item">
+            <li class="nav__list icon"><a href="#">お客様の声</a></li>
+            <li class="nav__list icon"><a href="#">料金一覧</a></li>
+            <li class="nav__list"><a href="#">ライセンス講習</a></li>
+            <li class="nav__list"><a href="#">体験ダイビング</a></li>
+            <li class="nav__list"><a href="#">ファンダイビング</a></li>
+          </ul>
+          <ul class="nav-item">
+            <li class="nav__list icon"><a href="#">よくある質問</a></li>
+            <li class="nav__list icon"><a href="#">プライバシー<br class="u-mobile">
+              ポリシー</a></li>
+            <li class="nav__list icon"><a href="#">利用規約</a></li>
+            <li class="nav__list icon"><a href="#">お問い合わせ</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer__copyright">Copyright &copy; 2021 - 2023 CodeUps LLC. All Rights Reserved.</p>
+    </div>
   </footer>
 </body>
 

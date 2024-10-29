@@ -1,0 +1,65 @@
+@use "global" as *;
+
+.footer {
+  background-color: $green-accent;
+}
+
+.footer__content {
+  @include mq("md") {
+    display: flex;
+    align-items: flex-end;
+    gap: rem(40);
+  }
+}
+
+.footer__logo {
+  display: inline-block;
+  width: rem(120);
+  @include mq("md") {
+    width: rem(200);
+  }
+}
+
+.footer__sns {
+  margin-top: rem(16);
+  display: flex;
+  align-items: center;
+  gap: rem(16);
+  @include mq("md") {
+    margin-top: 0;
+    margin-bottom: rem(5);
+  }
+}
+
+.sns__icon {
+  width: rem(24);
+  @include mq("md") {
+    width: rem(32);
+  }
+}
+
+.footer__nav {
+  color: $white;
+  display: flex;
+  gap: rem(16);
+  justify-content: center;
+  @include mq("md") {
+    justify-content: flex-start;
+    gap: rem(120);
+  }
+}
+
+.footer__copyright {
+  margin-top: rem(28);
+  color: $white;
+  font-family: $font-family-en;
+  font-size: rem(12);
+  line-height: rem(18);
+  margin-left: rem(-1);
+  margin-right: rem(-1);
+  text-align: center;
+  @include mq("md") {
+    margin-top: rem(68);
+    font-size: rem(14);
+  }
+}
