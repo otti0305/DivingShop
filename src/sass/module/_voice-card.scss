@@ -8,6 +8,11 @@
   padding-right: rem(16);
   padding-bottom: rem(24);
   padding-left: rem(16);
+  @include mq("md") {
+    padding-right: rem(24);
+    padding-left: rem(24);
+    width: calc(50% - 40px / 2);
+  }
 }
 
 .voice-card:hover {
@@ -17,10 +22,21 @@
 .voice-card__head {
   display: flex;
   gap: rem(13);
+  @include mq("md") {
+    align-items: flex-end;
+  }
 }
 
 .voice-card__info {
   margin-top: rem(-9);
+}
+
+.voice-card__meta {
+  @include mq("md") {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
 }
 
 .voice-card__gender {
@@ -37,7 +53,13 @@
   padding-top: rem(4);
   padding-right: rem(12);
   padding-bottom: rem(4);
-  padding-left: rem(4);
+  padding-left: rem(12);
+  @include mq("md") {
+    padding-top: rem(6);
+    padding-right: rem(16);
+    padding-bottom: rem(6);
+    padding-left: rem(16);
+  }
 }
 
 .voice-card__title {
@@ -46,10 +68,17 @@
   font-size: rem(16);
   font-weight: 500;
   border-bottom: rem(1) solid $green-accent;
+  @include mq("md") {
+    margin-top: rem(8);
+    font-size: rem(24);
+  }
 }
 
 .voice-card__img {
   aspect-ratio: 151 / 117;
+  @include mq("md") {
+    flex: 0 0 38.297%;
+  }
 }
 
 .voice-card__img img {

@@ -1,5 +1,69 @@
 @use "global" as *;
 
 .header {
-  background-color: skyblue;
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: rem(80);
+  background: rgba(13, 41, 54, 0.68);
+  @include mq("md") {
+    height: rem(90);
+  }
+}
+
+.header__inner {
+  height: inherit;
+}
+
+.header__inner.inner {
+  @include mq("md") {
+    max-width: rem(1410);
+    width: 100%;
+  }
+}
+
+.header__content {
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.header__logo {
+  width: rem(102);
+  z-index: 11;
+  transition: all .8s;
+  @include mq("md") {
+    width: rem(133);
+  }
+}
+
+.header__logo:hover {
+  opacity: .7;
+}
+
+.header__sp-nav {
+  display: none;
+  background-color: $green-accent;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  padding-top: rem(70);
+  @include mq("md") {
+    display: none;
+  }
+}
+
+.header__pc-nav {
+  display: none;
+  @include mq("md") {
+    display: block;
+  }
 }

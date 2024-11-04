@@ -9,15 +9,19 @@
   padding-top: 12px;
   padding-bottom: 12px;
   line-height: rem(18);
+  transition: all .8s;
 }
 
-.icon {
+.nav__list a:hover {
+  opacity: .7;
+}
+
+.nav__icon {
   position: relative;
-  margin-top: 16px;
   font-weight: 700;
 }
 
-.icon::after {
+.nav__icon::after {
   content: "";
   width: 18px;
   height: 18px;
@@ -26,8 +30,17 @@
   background-position: center;
   background-size: contain;
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  // top: 50%;
+  // transform: translateY(-50%);
+  top: rem(11);
   left: 0;
+}
+
+.nav__list_margin-top {
+  margin-top: rem(16);
+}
+
+.nav__list_font-weight {
+  font-weight: 700;
 }
 

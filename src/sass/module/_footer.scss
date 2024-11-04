@@ -33,18 +33,22 @@
 
 .sns__icon {
   width: rem(24);
+  transition: all .8s;
   @include mq("md") {
     width: rem(32);
   }
 }
 
+.sns__icon:hover {
+  opacity: .7;
+}
+
 .footer__nav {
-  color: $white;
-  display: flex;
-  gap: rem(16);
-  justify-content: center;
+  margin-top: rem(9);
+  padding-right: rem(10);
   @include mq("md") {
-    justify-content: flex-start;
+    margin-top: 0;
+    padding-right: rem(65);
     gap: rem(120);
   }
 }

@@ -1,0 +1,79 @@
+@use "global" as *;
+
+.blog {
+  position: relative;
+}
+
+.blog::before {
+  @include mq("md") {
+    content: "";
+    width: rem(437);
+    height: rem(201);
+    background-image: url(/assets/images/common/blog-fish.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: rem(24);
+    right: calc(50% + rem(182.5));
+    z-index: 1;
+  }
+}
+
+.blog::after {
+  @include mq("md") {
+    content: "";
+    width: 100vw;
+    height: rem(500);
+    background-image: url(/assets/images/common/blog-bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.blog__header {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  @include mq("md") {
+    color: $white;
+  }
+}
+
+.blog__header .section-header__en span {
+  @include mq("md") {
+    color: #DDF0F1;
+  }
+}
+
+.blog__header .section-header__ja {
+  @include mq("md") {
+    color: $white;
+  }
+}
+
+.blog__cards {
+  margin-top: rem(24);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: rem(40);
+  @include mq("md") {
+    flex-direction: inherit;
+    margin-top: rem(80);
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.blog__link {
+  margin-top: rem(40);
+  text-align: center;
+  @include mq("md") {
+    margin-top: rem(100);
+  }
+}

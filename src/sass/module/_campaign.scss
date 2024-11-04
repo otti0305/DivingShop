@@ -1,0 +1,34 @@
+@use "global" as *;
+
+.campaign__header {
+  text-align: center;
+}
+
+.campaign__contents {
+  margin-top: rem(24);
+  @include mq("md") {
+    margin-top: rem(40);
+  }
+}
+
+
+
+
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  display: none;
+  @include mq("md") {
+    display: block;
+  }
+}
+
+
+
+.campaign__link {
+  text-align: center;
+  margin-top: rem(40);
+  @include mq("md") {
+    margin-top: rem(80);
+  }
+}

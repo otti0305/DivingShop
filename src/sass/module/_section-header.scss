@@ -4,6 +4,9 @@
   display: flex;
   flex-direction: column;
   gap: rem(4);
+  @include mq("md") {
+    gap: rem(8);
+  }
 }
 
 .section-header__en {
@@ -11,6 +14,9 @@
   font-weight: $normal;
   font-size: rem(32);
   line-height: rem(40);
+  @include mq("md") {
+    font-size: rem(40);
+  }
 }
 
 .section-header__en span {
