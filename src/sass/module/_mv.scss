@@ -2,10 +2,10 @@
 
 .mv {
   width: 100vw;
+  height: 100vh;
   margin-left: calc(50% - 50vw);
   position: relative;
   @include mq("md") {
-    height: 100vh;
   }
 }
 
@@ -48,6 +48,7 @@
 }
 
 .mv-slide {
+  height: 100svh;
   aspect-ratio: 375 / 667;
   @include mq("md") {
     aspect-ratio: 1440 / 768;

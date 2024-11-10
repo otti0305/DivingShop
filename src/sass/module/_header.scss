@@ -55,7 +55,7 @@
   left: 0;
   right: 0;
   z-index: 10;
-  padding-top: rem(70);
+  padding-top: rem(92);
   @include mq("md") {
     display: none;
   }
@@ -66,4 +66,9 @@
   @include mq("md") {
     display: block;
   }
+}
+
+.header__sp-nav .nav {
+  gap: 0;
+  margin-left: rem(-22);
 }

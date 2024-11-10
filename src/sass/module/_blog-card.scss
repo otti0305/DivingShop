@@ -8,28 +8,15 @@
   padding-right: rem(16);
   padding-bottom: rem(24);
   padding-left: rem(16);
-  // transition: all .7s;
+  margin-left: auto;
+  margin-right: auto;
   @include mq("md") {
     width: calc(33.33333% - rem(40) * 2 / 3);
   }
 }
 
-.blog-card:hover {
-  // position: relative;
-  // opacity: .7;
-  .blog-card__img img {
-    transform: scale(1.1);
-  }
-}
-
-.blog-card:hover::after {
-  // content: "";
-  // width: 100%;
-  // height: 100%;
-  // background-color: #fff;
-  // position: absolute;
-  // top: 0;
-  // left: 0;
+.blog-card:hover .blog-card__img img {
+	transform: scale(1.1);
 }
 
 .blog-card__img {

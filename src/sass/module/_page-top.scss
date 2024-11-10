@@ -1,0 +1,51 @@
+@use "global" as *;
+
+body {
+  position: relative;
+}
+
+.page-top {
+  position: fixed;
+  right: rem(15);
+  bottom: rem(15);
+  z-index: 100;
+  @include mq("md") {
+    right: rem(20);
+    bottom: rem(20);
+  }
+}
+
+.page-top a {
+  display: block;
+  width: rem(48);
+  height: rem(48);
+  border-radius: 50%;
+  border: 1px solid $green-accent;
+  position: relative;
+  @include mq("md") {
+    width: rem(80);
+    height: rem(80);
+  }
+}
+
+.page-top a::after {
+  content: "";
+  width: rem(7);
+  height: rem(28);
+  background-image: url(/assets/images/common/page-top.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  top: 20%;
+  left: 39%;
+  @include mq("md") {
+    height: rem(40);
+    width: rem(10);
+  }
+}
+
+.page-top a:hover {
+  opacity: .7;
+}
+

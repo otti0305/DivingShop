@@ -4,10 +4,11 @@
   font-size: rem(16);
   font-weight: 700;
   line-height: rem(24);
-  padding-bottom: rem(4);
+  padding-bottom: rem(6);
   border-bottom: rem(1) solid $green-accent;
   @include mq("md") {
     font-weight: 500;
+    padding-bottom: rem(3);
   }
 }
 
@@ -15,7 +16,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: rem(8);
+  margin-top: rem(10);
 }
 
 .price__list dt,
