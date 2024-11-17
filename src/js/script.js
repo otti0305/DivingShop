@@ -25,8 +25,6 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
 
 const swiper = new Swiper('.js-campaign-swiper', {
   loop: true,
-  // speed: 6000,
-  // allowTouchMove: false,
   autoplay: {
       delay: 3000,
   },
