@@ -22,11 +22,6 @@
   position: relative;
 }
 
-.pc-nav__item a:hover {
-  opacity: .7;
-  color: $white;
-}
-
 .pc-nav__item a::after {
   content: "";
   left: 10%;

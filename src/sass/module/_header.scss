@@ -15,12 +15,13 @@
 
 .header__inner {
   height: inherit;
-}
-
-.header__inner.inner {
+  padding-left: $padding-sp;
+  padding-right: $padding-sp;
+  margin-left: auto;
+  margin-right: auto;
   @include mq("md") {
-    max-width: rem(1410);
-    width: 100%;
+    padding-left: rem(40);
+    padding-right: rem(40);
   }
 }
 
@@ -41,23 +42,26 @@
   }
 }
 
-.header__logo:hover {
-  opacity: .7;
-}
-
 .header__sp-nav {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
   background-color: $green-accent;
-  position: fixed;
-  width: 100vw;
+  position: absolute;
+  width: 100%;
   height: 100vh;
   top: 0;
   left: 0;
-  right: 0;
   z-index: 10;
   padding-top: rem(92);
+  overflow: scroll;
+  transition: all .7s;
+}
+
+.header__sp-nav.is-open {
+  visibility: visible;
+  opacity: 1;
   @include mq("md") {
-    display: none;
+    opacity: 0;
   }
 }
 
@@ -68,7 +72,8 @@
   }
 }
 
-.header__sp-nav .nav {
-  gap: 0;
-  margin-left: rem(-22);
-}
+// .js-sp-nav {
+//   @include mq("md") {
+//     display: none;
+//   }
+// }

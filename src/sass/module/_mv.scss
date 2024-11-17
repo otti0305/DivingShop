@@ -4,9 +4,8 @@
   width: 100vw;
   height: 100vh;
   margin-left: calc(50% - 50vw);
+  overflow: hidden;
   position: relative;
-  @include mq("md") {
-  }
 }
 
 .mv__header {

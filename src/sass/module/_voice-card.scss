@@ -29,10 +29,9 @@
 
 .voice-card__info {
   margin-top: rem(-9);
-  max-width: rem(149);
-  width: 100%;
+  width: 50%;
   @include mq("md") {
-    max-width: inherit;
+    width: 60%;
   }
 }
 
@@ -82,8 +81,9 @@
 
 .voice-card__img {
   aspect-ratio: 151 / 117;
+  width: 50%;
   @include mq("md") {
-    flex: 0 0 38.297%;
+    width: 40%;
   }
 }
 

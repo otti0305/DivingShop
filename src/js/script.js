@@ -3,33 +3,35 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
   $('.js-hamburger').on('click' , function() {
     if($('.js-hamburger').hasClass('is-open')) {
       $('.js-hamburger').removeClass('is-open');
-      $('.js-sp-nav').fadeOut(300);
+      // $('.js-sp-nav').fadeOut(300);
+      $('.js-sp-nav').removeClass('is-open');
     } else {
       $('.js-hamburger').addClass('is-open');
-      $('.js-sp-nav').fadeIn(300);
+      // $('.js-sp-nav').fadeIn(300);
+      $('.js-sp-nav').addClass('is-open');
     }
   });
 
   const swiper = new Swiper('.js-mv-swiper', {
     loop: true,
-
     autoplay: {
       delay: 3000,
     },
-
     pagination: {
       el: '.swiper-pagination',
     },
   });
-
 });
 
 const swiper = new Swiper('.js-campaign-swiper', {
   loop: true,
-
+  // speed: 6000,
+  // allowTouchMove: false,
   autoplay: {
       delay: 3000,
   },
+
+  centeredSlidesBounds: true,
 
   slidesPerView: 1.27,
   spaceBetween: 34,
@@ -40,12 +42,10 @@ const swiper = new Swiper('.js-campaign-swiper', {
       spaceBetween: 40,
     }
   },
-
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
-
 });
 
 //アニメーション

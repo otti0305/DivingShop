@@ -110,8 +110,8 @@
   margin-top: rem(16);
   position: relative;
   @include mq("md") {
-    max-width: rem(273);
-    width: 100%;
+    // max-width: rem(273);
+    width: 62%;
     margin-top: rem(24);
   }
 }

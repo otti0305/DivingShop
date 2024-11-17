@@ -1,19 +1,14 @@
 @use "global" as *;
 
-.campaign__inner.inner {
-  padding-left: rem(5);
-  @include mq("md") {
-    padding-left: rem(15);
-  }
+.campaign {
+  position: relative;
 }
 
 .campaign__header {
   text-align: center;
-  margin-left: rem(10);
 }
 
 .campaign__contents {
-  position: relative;
   margin-top: rem(24);
   margin-right: calc(50% - 50vw);
   @include mq("md") {
@@ -21,33 +16,60 @@
   }
 }
 
+.campaign-slide {
+  height: auto;
+}
+
+.campaign__swiper-button-prev,
+.campaign__swiper-button-next {
+  position: absolute;
+  width: rem(80);
+  height: rem(80);
+  border-radius: 50%;
+  border: rem(1) solid $green-accent;
+  top: rem(20);
+}
+
+.campaign__swiper-button-prev {
+  left: calc(50% +  min(300px , 25.777%));
+
+}
+
+.campaign__swiper-button-next {
+  left: calc(50% + min(460px , 40.59%));
+
+}
+
 .swiper-button-prev,
 .swiper-button-next {
   @include mq("md") {
-    position: absolute;
-    width: rem(80);
-    height: rem(80);
-    border-radius: 50%;
-    border: rem(1) solid $green-accent;
-    top: -17%;
+    // position: absolute;
+    // width: rem(80);
+    // height: rem(80);
+    // border-radius: 50%;
+    // border: rem(1) solid $green-accent;
+    // // top: -17%;
+    // top: 0;
   }
 }
 
 .swiper-button-prev {
   @include mq("md") {
-    left: 67%;
+    // left: 67%;
+    // left: calc(50% + rem(300));
   }
 }
 
 .swiper-button-next {
   @include mq("md") {
-    right: 14%;
+    // left: calc(50% + rem(460));
+    // right: 14%;
   }
 }
 
 .swiper-button-prev:hover,
 .swiper-button-next:hover {
-  opacity: .7;
+  // opacity: .7;
 }
 
 .swiper-button-prev::after,
@@ -89,4 +111,11 @@
     margin-left: rem(5);
   }
 }
+
+
+
+.swiper-slide {
+  // height: auto;
+}
+
 
