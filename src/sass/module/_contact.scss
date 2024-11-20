@@ -9,13 +9,6 @@
   }
 }
 
-.contact__illustration {
-  margin-top: rem(26);
-  @include mq("md") {
-    margin-top: rem(-38);
-  }
-}
-
 .contact__illustration img {
   margin-left: auto;
   width: rem(109);

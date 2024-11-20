@@ -1,10 +1,8 @@
 @use "global" as *;
 
 .top__voice {
-  padding-top: rem(80);
-  padding-bottom: rem(80);
+  margin-top: rem(80);
   @include mq("md") {
-    padding-top: rem(3);
-    padding-bottom: rem(72);
+    margin-top: rem(20);
   }
 }

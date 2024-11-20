@@ -5,18 +5,20 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
       $('.js-hamburger').removeClass('is-open');
       // $('.js-sp-nav').fadeOut(300);
       $('.js-sp-nav').removeClass('is-open');
+      $('.js-header').removeClass('is-active');
     } else {
       $('.js-hamburger').addClass('is-open');
       // $('.js-sp-nav').fadeIn(300);
       $('.js-sp-nav').addClass('is-open');
+      $('.js-header').addClass('is-active');
     }
   });
 
   const swiper = new Swiper('.js-mv-swiper', {
     loop: true,
-    autoplay: {
-      delay: 3000,
-    },
+    // autoplay: {
+    //   delay: 3000,
+    // },
     pagination: {
       el: '.swiper-pagination',
     },
@@ -25,9 +27,9 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
 
 const swiper = new Swiper('.js-campaign-swiper', {
   loop: true,
-  autoplay: {
-      delay: 3000,
-  },
+  // autoplay: {
+  //     delay: 3000,
+  // },
 
   centeredSlidesBounds: true,
 
@@ -104,5 +106,26 @@ $(document).ready(function () {
     return false
   })
 })
+
+//ドロワー時背景固定
+$(function () {
+  // ハンバーガーメニューボタンがクリックされたときのイベントハンドラを設定
+  $(".js-hamburger").click(function () {
+
+    // 現在のbodyタグのoverflowスタイルを確認
+    if ($("body").css("overflow") === "hidden") {
+
+      // もしoverflowがhiddenなら、bodyのスタイルを元に戻す
+      $("body").css({ height: "", overflow: "" });
+
+    } else {
+
+      // そうでなければ、bodyにheight: 100%とoverflow: hiddenを設定し、スクロールを無効にする
+      $("body").css({ height: "100%", overflow: "hidden" });
+
+    }
+  });
+});
+
 
 

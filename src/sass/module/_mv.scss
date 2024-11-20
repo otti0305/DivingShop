@@ -22,14 +22,16 @@
   font-family: $second-font-family;
   font-size: rem(40);
   letter-spacing: rem(21.6);
+  text-indent: rem(21.6);
   text-transform: uppercase;
-  margin-left: rem(18);
+  // margin-left: rem(18);
   line-height: rem(45);
   @include mq("md") {
     font-size: rem(80);
     letter-spacing: rem(43.2);
+    text-indent: rem(43.2);
     line-height: rem(100);
-    margin-left: rem(44);
+    // margin-left: rem(44);
   }
 }
 

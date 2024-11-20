@@ -8,9 +8,14 @@
   left: 0;
   height: rem(80);
   background: rgba(13, 41, 54, 0.68);
+  transition: all .7s;
   @include mq("md") {
     height: rem(90);
   }
+}
+
+.header.is-active {
+  background-color: $green-accent;
 }
 
 .header__inner {
@@ -52,9 +57,11 @@
   top: 0;
   left: 0;
   z-index: 10;
-  padding-top: rem(92);
-  overflow: scroll;
+  padding-top: rem(24);
   transition: all .7s;
+  margin-top: rem(80);
+  overflow-y: auto;
+  padding-bottom: rem(80);
 }
 
 .header__sp-nav.is-open {

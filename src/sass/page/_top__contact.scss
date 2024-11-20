@@ -1,10 +1,8 @@
 @use "global" as *;
 
 .top__contact {
-  padding-top: rem(32);
-  padding-bottom: rem(100);
+  margin-top: rem(54);
   @include mq("md") {
-    padding-top: rem(137);
-    padding-bottom: rem(160);
+    margin-top: rem(100);
   }
 }
