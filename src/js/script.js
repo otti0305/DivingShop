@@ -16,9 +16,9 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
 
   const swiper = new Swiper('.js-mv-swiper', {
     loop: true,
-    // autoplay: {
-    //   delay: 3000,
-    // },
+    autoplay: {
+      delay: 3000,
+    },
     pagination: {
       el: '.swiper-pagination',
     },
@@ -27,9 +27,9 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
 
 const swiper = new Swiper('.js-campaign-swiper', {
   loop: true,
-  // autoplay: {
-  //     delay: 3000,
-  // },
+  autoplay: {
+      delay: 3000,
+  },
 
   centeredSlidesBounds: true,
 
