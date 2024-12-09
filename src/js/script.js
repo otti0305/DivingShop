@@ -14,38 +14,35 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     }
   });
 
-  const swiper = new Swiper('.js-mv-swiper', {
+  const mv_swiper = new Swiper('.js-mv-swiper', {
     loop: true,
+    effect: "fade",
+    speed: 2000,
     autoplay: {
       delay: 3000,
-    },
-    pagination: {
-      el: '.swiper-pagination',
+      disableOnInteraction: false
     },
   });
-});
 
-const swiper = new Swiper('.js-campaign-swiper', {
-  loop: true,
-  autoplay: {
-      delay: 3000,
-  },
+  const campaign_swiper = new Swiper('.js-campaign-swiper', {
+    loop: true,
+    speed: 1000,
+    autoplay: {
+        delay: 3000,
+    },
+    slidesPerView: "auto",
+    spaceBetween: 24,
+    breakpoints: {
+      768: {
+        spaceBetween: 40,
+      }
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
 
-  centeredSlidesBounds: true,
-
-  slidesPerView: 1.27,
-  spaceBetween: 34,
-
-  breakpoints: {
-    768: {
-      slidesPerView: 3.5,
-      spaceBetween: 40,
-    }
-  },
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
 });
 
 //アニメーション

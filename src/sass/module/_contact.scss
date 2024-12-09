@@ -1,19 +1,21 @@
 @use "global" as *;
 
-.contact__inner.inner {
-  @include mq("md") {
-    max-width: rem(1390);
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-  }
+.contact {
+  position: relative;
 }
 
-.contact__illustration img {
-  margin-left: auto;
-  width: rem(109);
+.contact::after {
   @include mq("md") {
+    content: "";
     width: rem(301);
+    height: rem(138);
+    background-image: url(/assets/images/common/fish-img1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: -40px;
+    right: calc(50% - min(48vw , 671px));
   }
 }
 

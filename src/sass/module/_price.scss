@@ -2,12 +2,21 @@
 
 .price {
   background-color: #DDF0F1;
+  position: relative;
 }
 
-.price__inner.inner {
+.price::after {
   @include mq("md") {
-    max-width: rem(1290);
-    width: 100%;
+    content: "";
+    width: rem(437);
+    height: rem(201);
+    background-image: url(/assets/images/common/fish-img1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    bottom: rem(60);
+    left: calc(50% - min(48vw , rem(620)));
   }
 }
 

@@ -11,13 +11,17 @@
 .campaign__contents {
   margin-top: rem(24);
   margin-right: calc(50% - 50vw);
+  // overflow: hidden;
   @include mq("md") {
     margin-top: rem(35);
   }
 }
 
 .campaign-slide {
-  height: auto;
+  width: rem(280);
+  @include mq("md") {
+    width: rem(333);
+  }
 }
 
 .campaign__swiper-button-prev,
@@ -32,44 +36,10 @@
 
 .campaign__swiper-button-prev {
   left: calc(50% +  min(300px , 25.777%));
-
 }
 
 .campaign__swiper-button-next {
   left: calc(50% + min(460px , 40.59%));
-
-}
-
-.swiper-button-prev,
-.swiper-button-next {
-  @include mq("md") {
-    // position: absolute;
-    // width: rem(80);
-    // height: rem(80);
-    // border-radius: 50%;
-    // border: rem(1) solid $green-accent;
-    // // top: -17%;
-    // top: 0;
-  }
-}
-
-.swiper-button-prev {
-  @include mq("md") {
-    // left: 67%;
-    // left: calc(50% + rem(300));
-  }
-}
-
-.swiper-button-next {
-  @include mq("md") {
-    // left: calc(50% + rem(460));
-    // right: 14%;
-  }
-}
-
-.swiper-button-prev:hover,
-.swiper-button-next:hover {
-  // opacity: .7;
 }
 
 .swiper-button-prev::after,
@@ -107,15 +77,9 @@
   margin-top: rem(28);
   margin-left: rem(5);
   @include mq("md") {
-    margin-top: rem(66);
-    margin-left: rem(5);
+    margin-top: rem(70);
+    margin-right: rem(10);
   }
-}
-
-
-
-.swiper-slide {
-  // height: auto;
 }
 
 
