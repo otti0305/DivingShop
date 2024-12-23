@@ -18,6 +18,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     loop: true,
     effect: "fade",
     speed: 2000,
+    allowTouchMove: false,
     autoplay: {
       delay: 3000,
       disableOnInteraction: false

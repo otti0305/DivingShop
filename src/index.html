@@ -40,15 +40,13 @@
         <h1 class="header__logo">
           <a href="#"><img src="/assets/images/common/logo.png" alt="ロゴ画像"></a>
         </h1>
-        <div class="header-drawer">
-          <button class="header__hamburger js-hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </div>
+        <button class="header-hamburger js-hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
         <div class="header__sp-nav js-sp-nav">
-          <nav class="nav">
+          <nav class="header__nav nav">
             <div class="nav__items">
               <ul class="nav-item">
                 <li class="nav__list nav__icon"><a href="#">キャンペーン</a></li>
@@ -145,27 +143,27 @@
         <div class="mv__title">diving</div>
         <div class="mv__subtitle">into the ocean</div>
       </div>
-      <div class="swiper js-mv-swiper mv-swiper">
+      <div class="swiper js-mv-swiper mv__swiper">
         <div class="swiper-wrapper">
-          <div class="swiper-slide mv-slide">
+          <div class="swiper-slide mv__slide">
             <picture>
               <source media="(min-width: 768px)" srcset="/assets/images/common/mv-pc1.png">
               <img src="/assets/images/common/mv-sp1.png" alt="海亀の画像">
             </picture>
           </div>
-          <div class="swiper-slide mv-slide">
+          <div class="swiper-slide mv__slide">
             <picture>
               <source media="(min-width: 768px)" srcset="/assets/images/common/mv-pc2.png">
               <img src="/assets/images/common/mv-sp2.png" alt="海中の画像">
             </picture>
           </div>
-          <div class="swiper-slide mv-slide">
+          <div class="swiper-slide mv__slide">
             <picture>
               <source media="(min-width: 768px)" srcset="/assets/images/common/mv-pc3.png">
               <img src="/assets/images/common/mv-sp3.png" alt="海辺の画像">
             </picture>
           </div>
-          <div class="swiper-slide mv-slide">
+          <div class="swiper-slide mv__slide">
             <picture>
               <source media="(min-width: 768px)" srcset="/assets/images/common/mv-pc4.png">
               <img src="/assets/images/common/mv-sp4.png" alt="砂浜の画像">
@@ -178,13 +176,13 @@
     <section class="campaign top__campaign">
       <div class="campaign__inner inner">
         <div class="campaign__header section-header">
-          <div class="section-header__en"><span>C</span>ampaign</div>
+          <div class="section-header__en">Campaign</div>
           <h2 class="section-header__ja">キャンペーン</h2>
         </div>
         <div class="campaign__contents">
           <div class="swiper campaign__swiper js-campaign-swiper">
             <div class="swiper-wrapper">
-              <div class="swiper-slide campaign-slide">
+              <div class="swiper-slide campaign_slide">
                 <div class="campaign-card">
                   <div class="campaign-card__img">
                     <img src="/assets/images/common/campaign1.png" alt="campaignのイメージ写真">
@@ -202,7 +200,7 @@
                   </div>
                 </div>
               </div>
-              <div class="swiper-slide campaign-slide">
+              <div class="swiper-slide campaign_slide">
                 <div class="campaign-card">
                   <div class="campaign-card__img">
                     <img src="/assets/images/common/campaign2.png" alt="campaignのイメージ写真">
@@ -220,7 +218,7 @@
                   </div>
                 </div>
               </div>
-              <div class="swiper-slide campaign-slide">
+              <div class="swiper-slide campaign_slide">
                 <div class="campaign-card">
                   <div class="campaign-card__img">
                     <img src="/assets/images/common/campaign3.png" alt="campaignのイメージ写真">
@@ -238,7 +236,7 @@
                   </div>
                 </div>
               </div>
-              <div class="swiper-slide campaign-slide">
+              <div class="swiper-slide campaign_slide">
                 <div class="campaign-card">
                   <div class="campaign-card__img">
                     <img src="/assets/images/common/campaign4.png" alt="campaignのイメージ写真">
@@ -256,7 +254,7 @@
                   </div>
                 </div>
               </div>
-              <div class="swiper-slide campaign-slide">
+              <div class="swiper-slide campaign_slide">
                 <div class="campaign-card">
                   <div class="campaign-card__img">
                     <img src="/assets/images/common/campaign1.png" alt="campaignのイメージ写真">
@@ -274,7 +272,7 @@
                   </div>
                 </div>
               </div>
-              <div class="swiper-slide campaign-slide">
+              <div class="swiper-slide campaign_slide">
                 <div class="campaign-card">
                   <div class="campaign-card__img">
                     <img src="/assets/images/common/campaign2.png" alt="campaignのイメージ写真">
@@ -292,7 +290,7 @@
                   </div>
                 </div>
               </div>
-              <div class="swiper-slide campaign-slide">
+              <div class="swiper-slide campaign_slide">
                 <div class="campaign-card">
                   <div class="campaign-card__img">
                     <img src="/assets/images/common/campaign3.png" alt="campaignのイメージ写真">
@@ -310,7 +308,7 @@
                   </div>
                 </div>
               </div>
-              <div class="swiper-slide campaign-slide">
+              <div class="swiper-slide campaign_slide">
                 <div class="campaign-card">
                   <div class="campaign-card__img">
                     <img src="/assets/images/common/campaign4.png" alt="campaignのイメージ写真">
@@ -344,18 +342,18 @@
       </div>
     </section>
 
-    <section class="about top__about">
+    <section class="about top__about about__illustration">
       <div class="about__inner inner">
         <div class="about__header section-header">
-          <div class="section-header__en"><span>A</span>bout us</div>
+          <div class="section-header__en">About us</div>
           <h2 class="section-header__ja">私たちについて</h2>
         </div>
         <div class="about__img">
           <div class="about__img1">
-            <img src="/assets/images/common/about-img2.png" alt="魚の画像">
+            <img src="/assets/images/common/about-img1.png" alt="シーサーの画像">
           </div>
           <div class="about__img2">
-            <img src="/assets/images/common/about-img1.png" alt="シーサーの画像">
+            <img src="/assets/images/common/about-img2.png" alt="魚の画像">
           </div>
         </div>
         <div class="about__content">
@@ -380,7 +378,7 @@
     <section class="information top__information">
       <div class="information__inner inner">
         <div class="information__header section-header">
-          <div class="section-header__en"><span>I</span>nformation</div>
+          <div class="section-header__en">Information</div>
           <h2 class="section-header__ja">ダイビング情報</h2>
         </div>
         <div class="information__content">
@@ -404,10 +402,10 @@
       </div>
     </section>
 
-    <section class="blog top__blog">
+    <section class="blog top__blog blog__illustration">
       <div class="blog__inner inner">
         <div class="blog__header section-header">
-          <div class="section-header__en"><span>B</span>log</div>
+          <div class="section-header__en">Blog</div>
           <h2 class="section-header__ja">ブログ</h2>
         </div>
         <div class="blog__cards">
@@ -417,7 +415,8 @@
             </div>
             <div class="blog-card__body">
               <div class="blog-card__date">
-                <time datetime="2024-10-27T19:00">2023/11/17</time></div>
+                <time datetime="2024-10-27T19:00">2023/11/17</time>
+              </div>
               <h3 class="blog-card__title">ライセンス取得</h3>
             </div>
             <p class="blog-card__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
@@ -429,7 +428,8 @@
             </div>
             <div class="blog-card__body">
               <div class="blog-card__date">
-                <time datetime="2024-10-27T19:00">2023/11/17</time></div>
+                <time datetime="2024-10-27T19:00">2023/11/17</time>
+              </div>
               <h3 class="blog-card__title">ウミガメと泳ぐ</h3>
             </div>
             <p class="blog-card__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
@@ -441,7 +441,8 @@
             </div>
             <div class="blog-card__body">
               <div class="blog-card__date">
-                <time datetime="2024-10-27T19:00">2023/11/17</time></div>
+                <time datetime="2024-10-27T19:00">2023/11/17</time>
+              </div>
               <h3 class="blog-card__title">カクレクマノミ</h3>
             </div>
             <p class="blog-card__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
@@ -459,10 +460,10 @@
       </div>
     </section>
 
-    <section class="voice top__voice">
+    <section class="voice top__voice voice__illustration">
       <div class="voice__inner inner">
         <div class="voice__header section-header">
-          <div class="section-header__en"><span>V</span>oice</div>
+          <div class="section-header__en">Voice</div>
           <h2 class="section-header__ja">お客様の声</h2>
         </div>
         <div class="voice__cards">
@@ -516,10 +517,10 @@
       </div>
     </section>
 
-    <section class="price top__price">
+    <section class="price top__price price__illustration">
       <div class="price__inner inner">
         <div class="price__header section-header">
-          <div class="section-header__en"><span>P</span>rice</div>
+          <div class="section-header__en">Price</div>
           <h2 class="section-header__ja">料金一覧</h2>
         </div>
         <div class="price__wrapper">
@@ -607,7 +608,7 @@
       </div>
     </section>
 
-    <section class="contact top__contact">
+    <section class="contact top__contact contact__illustration">
       <div class="contact__inner inner">
         <div class="contact__body">
           <div class="contact__info">
@@ -629,12 +630,10 @@
           </div>
           <div class="contact__form">
             <div class="contact__header section-header">
-              <div class="section-header__en"><span>C</span>ontact</div>
+              <div class="section-header__en">Contact</div>
               <h2 class="section-header__ja">お問い合わせ</h2>
             </div>
-            <div class="contact__form-link">
-              <a href="#">ご予約・お問い合わせはコチラ</a>
-            </div>
+            <p class="contact__form-text">ご予約・お問い合わせはコチラ</p>
             <div class="contact__link">
               <a href="#" class="view-link">
                 <div class="view-link__content">

@@ -11,14 +11,14 @@
 .campaign__contents {
   margin-top: rem(24);
   margin-right: calc(50% - 50vw);
-  // overflow: hidden;
   @include mq("md") {
     margin-top: rem(35);
   }
 }
 
-.campaign-slide {
+.campaign_slide {
   width: rem(280);
+  height: auto;
   @include mq("md") {
     width: rem(333);
   }
@@ -35,11 +35,11 @@
 }
 
 .campaign__swiper-button-prev {
-  left: calc(50% +  min(300px , 25.777%));
+  left: calc(50% +  min(rem(300) , 25.777%));
 }
 
 .campaign__swiper-button-next {
-  left: calc(50% + min(460px , 40.59%));
+  left: calc(50% + min(rem(460) , 40.59%));
 }
 
 .swiper-button-prev::after,
@@ -75,10 +75,8 @@
 .campaign__link {
   text-align: center;
   margin-top: rem(28);
-  margin-left: rem(5);
   @include mq("md") {
     margin-top: rem(70);
-    margin-right: rem(10);
   }
 }
 

@@ -13,20 +13,20 @@
   font-family: $font-family-en;
   font-weight: $normal;
   font-size: rem(32);
-  line-height: rem(40);
+  line-height: 1.25;
   @include mq("md") {
     font-size: rem(40);
+    line-height: 1;
   }
 }
 
-.section-header__en span {
+.section-header__en::first-letter {
   color: $green-accent;
 }
 
 .section-header__ja {
   color: $green-accent;
   font-size: rem(12);
-  line-height: rem(18);
 }
 
 

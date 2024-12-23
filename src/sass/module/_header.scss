@@ -61,7 +61,7 @@
   transition: all .7s;
   margin-top: rem(80);
   overflow-y: auto;
-  padding-bottom: rem(80);
+  padding-bottom: rem(100);
 }
 
 .header__sp-nav.is-open {
@@ -78,9 +78,3 @@
     display: block;
   }
 }
-
-// .js-sp-nav {
-//   @include mq("md") {
-//     display: none;
-//   }
-// }

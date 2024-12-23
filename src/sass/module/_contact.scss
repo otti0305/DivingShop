@@ -1,10 +1,11 @@
 @use "global" as *;
 
-.contact {
+
+.contact__illustration {
   position: relative;
 }
 
-.contact::after {
+.contact__illustration::after {
   @include mq("md") {
     content: "";
     width: rem(301);
@@ -20,14 +21,11 @@
 }
 
 .contact__body {
-  max-width: 295px;
-  width: 100%;
-  margin: 0 auto;
-  margin-top: -26px;
+  margin-left: rem(25);
+  margin-right: rem(25);
   @include mq("md") {
-    margin-top: rem(-100);
-    max-width: rem(1080);
-    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
     background: #FFF;
     box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.25);
     display: flex;
@@ -89,10 +87,6 @@
   }
 }
 
-.contact__list li {
-  line-height: rem(24);
-}
-
 .contact__list li:not(:first-child) {
   margin-top: rem(4);
 }
@@ -105,7 +99,6 @@
   margin-top: rem(16);
   position: relative;
   @include mq("md") {
-    // max-width: rem(273);
     width: 62%;
     margin-top: rem(24);
   }
@@ -135,7 +128,7 @@
 
 .contact__header {
   text-align: center;
-  padding-top: rem(21);
+  // padding-top: rem(21);
   margin-left: rem(-10);
   @include mq("md") {
     margin-left: 0;
@@ -144,9 +137,18 @@
 
 .contact__header .section-header__en {
   font-size: rem(80);
+  line-height: 1;
 }
 
 .contact__header .section-header__ja {
+  margin-top: rem(-10);
+}
+
+.contact__form-text {
+  color: $green-accent;
+  text-align: center;
+  font-size: rem(14);
+  line-height: 1.125;
   margin-top: rem(8);
 }
 
@@ -154,20 +156,7 @@
   text-align: center;
 }
 
-.contact__form-link a {
-  display: block;
-  padding-top: rem(8);
-  padding-bottom: rem(8);
-  color: $green-accent;
-  font-size: rem(14);
-  line-height: rem(18);
-}
-
-.contact__form-link a:hover {
-  opacity: .7;
-}
-
 .contact__link {
   text-align: center;
-  margin-top: rem(30);
+  margin-top: rem(40);
 }

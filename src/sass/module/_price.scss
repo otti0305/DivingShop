@@ -2,10 +2,20 @@
 
 .price {
   background-color: #DDF0F1;
+  // position: relative;
+  padding-top: rem(80);
+  padding-bottom: rem(80);
+  @include mq("md") {
+    padding-top: rem(103);
+    padding-bottom: rem(100);
+  }
+}
+
+.price__illustration {
   position: relative;
 }
 
-.price::after {
+.price__illustration::after {
   @include mq("md") {
     content: "";
     width: rem(437);
@@ -77,9 +87,4 @@
   @include mq("md") {
     margin-top: rem(80);
   }
-}
-
-.price__illustration img {
-  width: rem(437);
-  margin-top: rem(-160);
 }

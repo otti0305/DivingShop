@@ -1,15 +1,15 @@
 @use "global" as *;
 
 .nav__list {
-  padding-left: 22px;
+  padding-left: rem(22);
 }
 
 .nav__list a {
   display: block;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  line-height: rem(18);
+  padding-top: rem(12);
+  padding-bottom: rem(12);
   transition: all .8s;
+  line-height: 1.125;
 }
 
 .nav__list a:hover {
@@ -23,15 +23,13 @@
 
 .nav__icon::after {
   content: "";
-  width: 18px;
-  height: 18px;
+  width: rem(18);
+  height: rem(18);
   background-image: url(/assets/images/common/hitode.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
   position: absolute;
-  // top: 50%;
-  // transform: translateY(-50%);
   top: rem(11);
   left: 0;
 }
