@@ -74,7 +74,7 @@
   object-fit: cover;
 }
 
-.price-content__margin-top:not(:first-child) {
+.price-content_margin-top:not(:first-child) {
   margin-top: rem(40);
   @include mq("md") {
     margin-top: rem(32);

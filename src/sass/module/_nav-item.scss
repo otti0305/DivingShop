@@ -1,10 +1,10 @@
 @use "global" as *;
 
-.nav__list {
+.nav-item__list {
   padding-left: rem(22);
 }
 
-.nav__list a {
+.nav-item__list a {
   display: block;
   padding-top: rem(12);
   padding-bottom: rem(12);
@@ -12,16 +12,16 @@
   line-height: 1.125;
 }
 
-.nav__list a:hover {
+.nav-item__list a:hover {
   opacity: .7;
 }
 
-.nav__icon {
+.nav-item__list_icon {
   position: relative;
   font-weight: 700;
 }
 
-.nav__icon::after {
+.nav-item__list_icon::after {
   content: "";
   width: rem(18);
   height: rem(18);
@@ -34,11 +34,11 @@
   left: 0;
 }
 
-.nav__list_margin-top {
+.nav-item__list_margin-top {
   margin-top: rem(16);
 }
 
-.nav__list_font-weight {
+.nav-item__list_font-weight {
   font-weight: 700;
 }
 

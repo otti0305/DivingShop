@@ -1,6 +1,6 @@
 @use "global" as *;
 
-.price__title {
+.price-content__title {
   font-size: rem(16);
   font-weight: 700;
   padding-bottom: rem(6);
@@ -11,7 +11,7 @@
   }
 }
 
-.price__list {
+.price-content__list {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -19,8 +19,8 @@
   gap: rem(20);
 }
 
-.price__list dt,
-.price__list dd {
+.price-content__list dt,
+.price-content__list dd {
   font-size: rem(14);
   @include mq("md") {
     font-size: rem(16);
