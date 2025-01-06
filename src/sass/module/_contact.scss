@@ -1,25 +1,5 @@
 @use "global" as *;
 
-
-.contact__illustration {
-  position: relative;
-}
-
-.contact__illustration::after {
-  @include mq("md") {
-    content: "";
-    width: rem(301);
-    height: rem(138);
-    background-image: url(/assets/images/common/fish-img1.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    position: absolute;
-    top: -40px;
-    right: calc(50% - min(48vw , 671px));
-  }
-}
-
 .contact__body {
   margin-left: rem(25);
   margin-right: rem(25);

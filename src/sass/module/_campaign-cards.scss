@@ -1,0 +1,9 @@
+@use "global" as *;
+
+.campaign-cards__item {
+  width: rem(280);
+  height: auto;
+  @include mq("md") {
+    width: rem(333);
+  }
+}

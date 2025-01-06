@@ -16,12 +16,8 @@
   }
 }
 
-.campaign_slide {
-  width: rem(280);
-  height: auto;
-  @include mq("md") {
-    width: rem(333);
-  }
+.campaign__slide {
+  
 }
 
 .campaign__swiper-button-prev,

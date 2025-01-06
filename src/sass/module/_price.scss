@@ -11,25 +11,6 @@
   }
 }
 
-.price__illustration {
-  position: relative;
-}
-
-.price__illustration::after {
-  @include mq("md") {
-    content: "";
-    width: rem(437);
-    height: rem(201);
-    background-image: url(/assets/images/common/fish-img1.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    position: absolute;
-    bottom: rem(60);
-    left: calc(50% - min(48vw , rem(620)));
-  }
-}
-
 .price__header {
   text-align: center;
 }
@@ -72,13 +53,6 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
-}
-
-.price-content_margin-top:not(:first-child) {
-  margin-top: rem(40);
-  @include mq("md") {
-    margin-top: rem(32);
-  }
 }
 
 .price__link {

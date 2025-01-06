@@ -1,0 +1,8 @@
+@use "global" as *;
+
+.price-contents__item:not(:first-child) {
+  margin-top: rem(40);
+  @include mq("md") {
+    margin-top: rem(32);
+  }
+}

@@ -15,3 +15,38 @@
     max-width: 100%;
   }
 }
+
+.nav__list {
+  padding-left: rem(22);
+}
+
+.nav__list a {
+  display: block;
+  padding-top: rem(12);
+  padding-bottom: rem(12);
+  transition: all .8s;
+  line-height: 1.125;
+}
+
+.nav__list a:hover {
+  opacity: .7;
+}
+
+.nav__list--active {
+  position: relative;
+  font-weight: 700;
+  margin-top: rem(16);
+}
+
+.nav__list--active::after {
+  content: "";
+  width: rem(18);
+  height: rem(18);
+  background-image: url(/assets/images/common/hitode.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  position: absolute;
+  top: rem(11);
+  left: 0;
+}

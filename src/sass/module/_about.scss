@@ -4,26 +4,11 @@
   position: relative;
 }
 
-.about__illustration::after {
-  @include mq("md") {
-    content: "";
-    width: rem(191);
-    height: rem(181);
-    background-image: url(/assets/images/common/coral.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    position: absolute;
-    right: calc(50% - min(48vw , rem(637)));
-    bottom: rem(-90);
-  }
-}
-
 .about__header {
   text-align: center;
 }
 
-.about__img {
+.about__imgs {
   margin-top: rem(27);
   @include mq("md") {
     margin-top: rem(40);

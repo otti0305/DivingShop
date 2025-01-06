@@ -1,7 +1,7 @@
 @use "global" as *;
 
-.top__voice {
-  margin-top: rem(80);
+.top-price {
+  margin-top: rem(83);
   @include mq("md") {
     margin-top: rem(140);
   }
