@@ -8,6 +8,7 @@
   padding-right: rem(16);
   padding-bottom: rem(24);
   padding-left: rem(16);
+  height: 100%;
   @include mq("md") {
     padding-right: rem(24);
     padding-left: rem(24);

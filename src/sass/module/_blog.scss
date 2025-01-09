@@ -11,7 +11,7 @@
 .blog::after {
   @include mq("md") {
     content: "";
-    width: 100vw;
+    width: 100%;
     height: rem(500);
     background-image: url(/assets/images/common/blog-bg.png);
     background-repeat: no-repeat;

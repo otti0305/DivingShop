@@ -2,6 +2,7 @@
 
 .campaign {
   position: relative;
+  overflow-x: clip;
 }
 
 .campaign__header {
@@ -14,10 +15,6 @@
   @include mq("md") {
     margin-top: rem(35);
   }
-}
-
-.campaign__slide {
-  
 }
 
 .campaign__swiper-button-prev,
