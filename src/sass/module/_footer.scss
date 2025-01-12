@@ -37,7 +37,7 @@
   }
 }
 
-.sns__icon {
+.footer__sns-icon {
   width: rem(24);
   transition: all .8s;
   @include mq("md") {
@@ -45,7 +45,7 @@
   }
 }
 
-.sns__icon:hover {
+.footer__sns-icon:hover {
   opacity: .7;
 }
 
