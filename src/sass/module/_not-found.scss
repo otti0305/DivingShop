@@ -1,0 +1,63 @@
+@use "global" as *;
+
+.not-found {
+  background-color: #408F95;
+  padding-top: rem(80);
+  padding-bottom: rem(43);
+  position: relative;
+  @include mq("md") {
+    padding-top: rem(90);
+    padding-bottom: rem(148);
+  }
+}
+
+.not-found::after {
+  content: "";
+  width: rem(345);
+  height: rem(294);
+  background-image: url(/assets/images/common/404-bg.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  top: rem(105);
+  left: 50%;
+  transform: translateX(-50%);
+  @include mq("md") {
+    width: rem(700);
+    height: rem(613);
+    left: 37%;
+    top: rem(135);
+  }
+}
+
+.not-found__title {
+  margin-top: rem(50);
+  color: $white;
+  font-family: $second-font-family;
+  font-size: rem(80);
+  font-weight: 400;
+  letter-spacing: 0.5em;
+  text-align: center;
+  text-indent: 0.5em;
+  line-height: 1.2;
+  @include mq("md") {
+    font-size: rem(160);
+    margin-top: rem(100);
+    line-height: 1.45;
+  }
+}
+
+.not-found__text {
+  color: $white;
+  text-align: center;
+  font-family: $second-font-family;
+}
+
+.not-found__link {
+  text-align: center;
+  margin-top: rem(37);
+  @include mq("md") {
+    margin-top: rem(83);
+  }
+}

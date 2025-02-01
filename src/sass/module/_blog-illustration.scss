@@ -1,5 +1,9 @@
 @use "global" as *;
 
+.blog-illustration {
+  position: relative;
+}
+
 .blog-illustration::before {
   @include mq("md") {
     content: "";

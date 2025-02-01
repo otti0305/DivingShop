@@ -1,0 +1,40 @@
+@use "global" as *;
+
+.proviso__inner.inner {
+  @include mq("md") {
+    max-width: rem(850);
+    width: 100%;
+  }
+}
+
+.proviso__title {
+  font-size: rem(24);
+  font-weight: 500;
+  margin-top: rem(52);
+  @include mq("md") {
+    font-size: rem(32);
+    margin-top: rem(150);
+  }
+}
+
+.proviso__text-body {
+  margin-top: rem(40);
+  line-height: 2;
+}
+
+.proviso__text-title {
+  margin-top: rem(32);
+}
+
+.proviso__text-title--margin-top {
+  margin-top: 0;
+}
+
+.proviso__texts {
+  list-style: auto;
+  padding-left: rem(23);
+}
+
+.proviso__texts--margin-top {
+  margin-top: rem(30);
+}

@@ -1,0 +1,34 @@
+@use "global" as *;
+
+.pagination {
+  display: flex;
+  gap: rem(12);
+}
+
+.pagination__item--margin-left {
+  margin-left: rem(28);
+}
+
+.pagination__item a {
+  width: rem(38);
+  height: rem(38);
+  border: 1px solid $green-accent;
+  color: $green-accent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.pagination__item a:hover {
+  background-color: $green-accent;
+  color: $white;
+}
+
+.pagination__item.is-active a {
+  background-color: $green-accent;
+  color: $white;
+}
+
+
+

@@ -1,5 +1,9 @@
 @use "global" as *;
 
+.about-illustration {
+  position: relative;
+}
+
 .about-illustration::after {
   @include mq("md") {
     content: "";

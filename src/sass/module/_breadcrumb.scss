@@ -1,0 +1,28 @@
+@use "global" as *;
+
+.breadcrumb__lists {
+  display: flex;
+  align-items: center;
+  gap: rem(8);
+}
+
+.breadcrumb__list {
+  font-size: rem(14);
+}
+
+.breadcrumb__list a {
+  font-size: rem(14);
+}
+
+.breadcrumb__list a:hover {
+  opacity: 0.7;
+}
+
+.breadcrumb__list img {
+  width: rem(4);
+  height: rem(8);
+}
+
+.breadcrumb__list--white {
+  color: $white;
+}
