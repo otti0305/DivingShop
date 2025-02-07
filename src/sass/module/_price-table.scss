@@ -1,0 +1,107 @@
+@use "global" as *;
+
+.price-table {
+  border-collapse: collapse;
+  max-width: rem(600);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  @include mq("md") {
+    max-width: rem(702);
+  }
+}
+
+.price-table th,
+.price-table td {
+  border: 1px solid $green-accent;
+  height: rem(60);
+}
+
+.price-table th {
+  padding-left: rem(30);
+  height: rem(40);
+  @include mq("md") {
+    padding-left: 0;
+    padding-bottom: rem(78);
+  }
+}
+
+.thead {
+  @include mq("md") {
+    display: none;
+  }
+}
+
+.thead tr {
+  background-color: $green-accent;
+  color: $white;
+}
+
+.thead tr th span {
+  position: relative;
+}
+
+.thead tr th span::after {
+  content: "";
+  width: rem(24);
+  height: rem(24);
+  background-image: url(/assets/images/common/table-icon.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  left: rem(-30);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.display-pc {
+  display: none;
+  @include mq("md") {
+    display: table-cell;
+    background-color: $green-accent;
+    color: $white;
+  }
+}
+
+.display-pc span  {
+  position: relative;
+}
+
+.display-pc span::after {
+  @include mq("md") {
+    content: "";
+    width: rem(64);
+    height: rem(64);
+    background-image: url(/assets/images/common/table-icon.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: rem(32);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.tbody tr td {
+  padding-right: rem(13);
+  padding-left: rem(13);
+  text-align: right;
+}
+
+.tbody tr td:nth-of-type(1) {
+  width: 69.565%;
+  text-align: center;
+  @include mq("md") {
+    width: 48.433%;
+    text-align: left;
+  }
+}
+
+.tbody tr td:nth-of-type(2) {
+  width: 30.435%;
+  @include mq("md") {
+    width: 23.076%;
+  }
+}

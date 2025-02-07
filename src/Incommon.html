@@ -37,9 +37,9 @@
   <header class="header js-header">
     <div class="header__inner">
       <div class="header__content">
-        <div class="header__logo">
+        <di class="header__logo">
           <a href="#"><img src="/assets/images/common/logo.png" alt="ロゴ画像"></a>
-        </div>
+        </di>
         <button class="header__hamburger js-hamburger">
           <span></span>
           <span></span>
@@ -151,7 +151,7 @@
     </div>
 
     <!-- パンくず -->
-    <nav class="breadcrumb">
+    <nav class="breadcrumb layout-breadcrumb">
       <div class="breadcrumb__inner inner">
         <ul class="breadcrumb__lists">
           <li class="breadcrumb__list"><a href="index.html">TOP</a></li>
@@ -162,12 +162,13 @@
     </nav>
 
     <!-- ページネーション -->
-     <ul class="pagination">
+    <ul class="pagination">
       <li class="pagination__item"><a href="#">
         <svg xmlns="http://www.w3.org/2000/svg" width="10" height="18" viewBox="0 0 10 18" fill="none">
           <path d="M9 1L1 9L9 17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-      </a></li>
+       </a>
+      </li>
       <li class="pagination__item pagination__item--margin-left is-active"><a href="#">1</a></li>
       <li class="pagination__item"><a href="#">2</a></li>
       <li class="pagination__item"><a href="#">3</a></li>
@@ -178,8 +179,110 @@
         <svg xmlns="http://www.w3.org/2000/svg" width="10" height="18" viewBox="0 0 10 18" fill="none">
           <path d="M1 1L9 9L1 17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-      </a></li>
-     </ul>
+       </a>
+      </li>
+    </ul>
+
+     <!-- テーブル -->
+    <table class="price-table">
+        <thead class="thead">
+          <tr>
+            <th colspan="2">ライセンス講習</th>
+          </tr>
+        </thead>
+        <tbody class="tbody">
+          <tr>
+            <th class="display-pc" rowspan="3">ライセンス講習</th>
+            <td>オープンウォーター<br class="u-mobile">
+              ダイバーコース</td>
+            <td>¥50,000</td>
+          </tr>
+          <tr>
+            <td>アドバンスド<br class="u-mobile">
+              オープンウォーターコース</td>
+            <td>¥60,000</td>
+          </tr>
+          <tr>
+            <td>レスキュー＋EFRコース</td>
+            <td>¥70,000</td>
+          </tr>
+        </tbody>
+    </table>
+
+    <!-- アコーディオン -->
+    <div class="accordion">
+      <div class="accordion__header">ここに質問が入ります。</div>
+      <p class="accordion__text">ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります</p>
+    </div>
+
+    <!-- タブ -->
+    <ul class="tab">
+      <li class="tab__list is-active"><a href="#">all</a></li>
+      <li class="tab__list"><a href="#">ライセンス講習</a></li>
+      <li class="tab__list"><a href="#">ファンダイビング</a></li>
+      <li class="tab__list"><a href="#">体験ダイビング</a></li>
+    </ul>
+
+    <div class="inner">
+      <!-- インフォメーションタブ -->
+      <ul class="information-tab">
+        <li class="information-tab__list"><a href="">ライセンス<br class="u-mobile">
+          講習</a></li>
+        <li class="information-tab__list"><a href="">ファン<br class="u-mobile">
+          ダイビング</a></li>
+        <li class="information-tab__list"><a href="">体験<br class="u-mobile">
+          ダイビング</a></li>
+      </ul>
+    </div>
+
+    <!-- サブキャンペーンカード -->
+     <div class="inner">
+       <div class="sub-campaign-card">
+         <div class="sub-campaign-card__img">
+           <img src="/assets/images/common/campaign1.png" alt="campaignのイメージ写真">
+         </div>
+         <div class="sub-campaign-card__body">
+           <div class="sub-campaign-card__head">
+             <div class="sub-campaign-card__category">ライセンス講習</div>
+             <h3 class="sub-campaign-card__title">ライセンス取得</h3>
+           </div>
+           <div class="sub-campaign-card__price">
+             <p class="sub-campaign-card__catch">全部コミコミ(お一人様)</p>
+             <div class="sub-campaign-card__content">
+               <div class="sub-campaign-card__old-price">¥56,000</div>
+               <div class="sub-campaign-card__new-price">¥46,000</div>
+             </div>
+           </div>
+           <div class="sub-campaign-card__text-body">
+            <p class="sub-campaign-card__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+              ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキスト</p>
+            <div class="sub-campaign-card__date"><time datetime="2025-2-5">2023/6/1-9/30</time></div>
+            <div class="sub-campaign-card__contact">ご予約・お問い合わせはコチラ</div>
+            <div class="sub-campaign-card__link">
+              <a href="#" class="view-link">
+                <div class="view-link__content">
+                  <div class="view-link__title">Contact us</div>
+                  <div class="view-link__icon"></div>
+                </div>
+              </a>
+            </div>
+           </div>
+         </div>
+        </div>
+     </div>
+
+     <!-- test -->
+      <!-- <div class="inner">
+        <div class="container">
+          <div class="item1">item1</div>
+          <div class="item2">item2</div>
+          <div class="item3">item3</div>
+          <div class="item4">item4</div>
+          <div class="item5">item5</div>
+          <div class="item6">item6</div>
+         </div>
+      </div> -->
+
 
     <section class="contact top-contact contact-illustration">
       <div class="contact__inner inner">

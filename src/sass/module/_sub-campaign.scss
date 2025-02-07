@@ -1,0 +1,18 @@
+@use "global" as *;
+
+.sub-campaign__cards {
+  margin-top: rem(35);
+  margin-right: rem(36);
+  margin-left: rem(36);
+  @include mq("md") {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+.sub-campaign__pagination {
+  margin-top: rem(70);
+  @include mq("md") {
+    margin-top: rem(51);
+  }
+}

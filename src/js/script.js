@@ -125,5 +125,12 @@ $(function () {
   });
 });
 
+// アコーディオン
+$('.accordion__header').click(function() {
+  $(this).next().slideToggle();
+  $(this).toggleClass('is-active');
+})
+
+
 
 

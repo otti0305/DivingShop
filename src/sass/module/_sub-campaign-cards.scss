@@ -1,0 +1,10 @@
+@use "global" as *;
+
+.sub-campaign-cards {
+  display: grid;
+  gap: rem(30);
+  @include mq("md") {
+    grid-template-columns: repeat(2 , 1fr);
+    gap: rem(44) rem(40);
+  }
+}
