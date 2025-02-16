@@ -1,0 +1,33 @@
+@use "global" as *;
+
+.article-title {
+  font-size: rem(24);
+  font-weight: 400;
+  padding-left: rem(82);
+  position: relative;
+}
+
+.article-title::before {
+  content: "";
+  width: rem(8);
+  height: rem(50);
+  background-color: $green-accent;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.article-title::after {
+  content: "";
+  width: rem(50);
+  height: rem(50);
+  background-image: url(/assets/images/common/article-icon.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  left: rem(24);
+  top: 50%;
+  transform: translateY(-50%);
+}

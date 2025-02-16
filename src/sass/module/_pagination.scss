@@ -6,6 +6,11 @@
   gap: rem(12);
 }
 
+.pagination--gap {
+  gap: rem(82);
+  transform: translateX(rem(-14));
+}
+
 .pagination__item--margin-left {
   margin-left: rem(28);
 }

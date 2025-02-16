@@ -1,0 +1,13 @@
+@use "global" as *;
+
+.sub-information__tab {
+  position: relative;
+  z-index: 1;
+}
+
+.sub-information__cards {
+  margin-top: rem(15);
+  @include mq("md") {
+    margin-top: rem(24);
+  }
+}

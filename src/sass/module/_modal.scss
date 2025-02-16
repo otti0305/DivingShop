@@ -1,0 +1,28 @@
+@use "global" as *;
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(32, 32, 32, 0.80);
+  z-index: 9999;
+}
+
+.modal img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  max-width: rem(345);
+  width: 100%;
+  height: 75%;
+  object-fit: contain;
+  @include mq("md") {
+    max-width: rem(1016);
+  }
+}

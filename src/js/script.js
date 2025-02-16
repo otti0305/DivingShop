@@ -131,6 +131,50 @@ $('.accordion__header').click(function() {
   $(this).toggleClass('is-active');
 })
 
+// モーダル
+$(".sub-gallery__img img").click(function() {
+  $(".modal").html($(this).prop("outerHTML"));
+  $(".modal").fadeIn(300);
+  $("body,html").css("overflow-y","hidden");
+  return false;
+});
+
+$(".modal").click(function() {
+  $(".modal").fadeOut(300);
+  $("body,html").css("overflow-y","visible");
+  return false;
+});
+
+// インフォメーション
+$(function() {
+  var tabs = $(".sub-information-tab__item");
+  $(".sub-information-tab__item").on("click", function() {
+      $(".is-active").removeClass("is-active");
+      $(this).addClass("is-active");
+      const index = tabs.index(this);
+      $(".sub-information-card").removeClass("is-show").eq(index).addClass("is-show");
+  });
+});
+
+// アーカイブ
+$('.archive__year').click(function() {
+  // $('.archive__months').toggle();
+  $(this).next().slideToggle();
+  $(this).toggleClass('is-open');
+});
+
+// $('.test').hide(5000);
+$('.testbutton').click(function() {
+  // alert('click');
+  // $('.test').hide(200);
+  $('.test').toggle(300);
+});
+
+// $('.test').hide(2000,function() {
+//   $('.test').show(3000);
+// });
+
+
 
 
 
