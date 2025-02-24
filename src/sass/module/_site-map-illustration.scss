@@ -1,0 +1,22 @@
+@use "global" as *;
+
+.site-map-illustration {
+  position: relative;
+}
+
+.site-map-illustration::after {
+  content: "";
+  width: rem(120);
+  height: rem(55);
+  background-image: url(/assets/images/common/fish-img2.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  top: rem(3);
+  left: rem(15);
+  @include mq("md") {
+    display: none;
+  }
+}
+

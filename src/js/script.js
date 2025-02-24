@@ -163,16 +163,27 @@ $('.archive__year').click(function() {
   $(this).toggleClass('is-open');
 });
 
-// $('.test').hide(5000);
-$('.testbutton').click(function() {
-  // alert('click');
-  // $('.test').hide(200);
-  $('.test').toggle(300);
+// コンタクトフォーム
+$('.js-submit').on("click", function() {
+  $('form').find('.invalid').removeClass('invalid');// 初期化
+  $('input[required]:invalid,textarea[required]:invalid').each(function(){// 項目が空だったらエラー表示をする
+    // document.myForm.action="/contact-error.html";
+    $(this).addClass('invalid');
+    $('.form__alert').addClass('is-active');
+    $(this).next().addClass('invalid');
+  });
+
+  if($('.invalid').length == 0){// 未入力がない時
+    $('form').submit();
+    // console.log('送信しました');
+  }else{// 未入力がある時
+    // console.log('未入力があります');
+    // document.myForm.action="/contact-error.html";
+
+  }
+  return false;// submitの送信中止用
 });
 
-// $('.test').hide(2000,function() {
-//   $('.test').show(3000);
-// });
 
 
 

@@ -1,0 +1,14 @@
+@use "global" as *;
+
+.sub-footer {
+  margin-top: rem(148);
+  @include mq("md") {
+    margin-top: rem(164);
+  }
+}
+
+.sub-footer--margin {
+  @include mq("md") {
+    margin-top: rem(120);
+  }
+}

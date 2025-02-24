@@ -1,0 +1,15 @@
+@use "global" as *;
+
+.thanks__title {
+  text-align: center;
+  line-height: 1.125;
+}
+
+.thanks__text {
+  text-align: center;
+  margin-top: rem(37);
+  line-height: 1.43;
+  @include mq("md") {
+    margin-top: rem(40);
+  }
+}

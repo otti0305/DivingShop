@@ -16,6 +16,12 @@
   }
 }
 
+.nav__items--gap {
+  @include mq("md") {
+    gap: rem(145);
+  }
+}
+
 .nav__list {
   padding-left: rem(22);
 }
@@ -49,4 +55,18 @@
   position: absolute;
   top: rem(11);
   left: 0;
+}
+
+.site-map__nav .nav__list--active::after {
+  content: "";
+  width: rem(18);
+  height: rem(18);
+  background-image: url(/assets/images/common/site-map-icon.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  position: absolute;
+  top: rem(11);
+  left: 0;
+  background-repeat: no-repeat;
 }

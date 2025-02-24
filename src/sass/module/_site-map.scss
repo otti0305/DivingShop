@@ -1,0 +1,9 @@
+@use "global" as *;
+
+.site-map__nav {
+  color: $base;
+  gap: rem(26);
+  @include mq("md") {
+    gap: rem(138);
+  }
+}
