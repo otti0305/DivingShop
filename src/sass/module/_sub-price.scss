@@ -1,0 +1,16 @@
+@use "global" as *;
+
+.sub-price__inner.inner {
+  max-width: rem(600);
+  width: 100%;
+  @include mq("md") {
+    max-width: rem(752);
+  }
+}
+
+.sub-price__tables {
+  margin-top: rem(52);
+  @include mq("md") {
+    margin-top: rem(150);
+  }
+}

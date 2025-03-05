@@ -43,16 +43,16 @@
   cursor: pointer;
 }
 
-.archive__months {
-  // margin-top: rem(5);
-}
-
 .archive__month {
   font-size: rem(24);
   color: $green-accent;
   margin-left: rem(26);
   padding-left: rem(32);
   position: relative;
+}
+
+.archive__month a {
+  display: block;
 }
 
 .archive__month::before {

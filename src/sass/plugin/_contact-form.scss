@@ -65,7 +65,7 @@ textarea {
 	font-size: $fz;
 	padding: $padding-und $padding-lnr;
 	width: 100%;
-  max-width: rem(480);
+  max-width: rem(600);
 	background: $back-cr;
 	border: 1px solid $border-cr-default;
 	// border-radius: $border-r;
@@ -82,7 +82,7 @@ textarea {
 	}
 }
 [type="tel"] {
-  max-width: rem(480);
+  max-width: rem(600);
   width: 100%;
 }
 button,
@@ -218,7 +218,7 @@ select {
 	cursor: pointer;
 	width: 100%;
 	/*↓カスタム */
-	max-width: rem(480);
+	max-width: rem(600);
   margin-top: rem(15);
 	font-size: rem(12);
 	padding: rem(10) rem(8);
@@ -271,5 +271,5 @@ input.invalid::placeholder {
 textarea {
 	height: $textarea-height;
   width: 100%;
-  max-width: rem(480);
+  max-width: rem(600);
 }

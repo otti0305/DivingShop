@@ -23,82 +23,64 @@
   text-align: center;
 }
 
-.sub-gallery__imgs1,
-.sub-gallery__imgs2 {
+.sub-gallery__imgs {
   max-width: rem(600);
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  @include mq("md") {
-    max-width: rem(1080);
-  }
-}
-
-.sub-gallery__imgs1 {
   margin-top: rem(40);
   display: grid;
   gap: rem(8);
   @include mq("md") {
     margin-top: rem(80);
-    grid-template-columns: 45.4% 53.7%;
-    grid-template-rows: repeat(2,1fr);
+    max-width: rem(1080);
+    grid-template-columns: 45.4% 1fr 45.4%;
+    grid-auto-rows: auto;
   }
 }
 
-.sub-gallery__imgs2 {
-  margin-top: rem(8);
-  display: grid;
-  gap: rem(8);
-  @include mq("md") {
-    grid-template-columns: 53.7% 45.4%;
-    grid-template-rows: repeat(2,1fr);
-  }
+.sub-gallery__img img {
+  height: 100%;
 }
 
-.sub-gallery__imgs1 .sub-gallery__img:nth-child(1) {
+.sub-gallery__img:nth-child(1) {
   @include mq("md") {
+    grid-column: 1/2;
     grid-row: 1/3;
   }
 }
 
-.sub-gallery__imgs2 .sub-gallery__img:nth-child(1) {
+.sub-gallery__img:nth-child(2) {
   @include mq("md") {
+    grid-column: 2/4;
     grid-row: 1;
   }
 }
 
-.sub-gallery__imgs2 .sub-gallery__img:nth-child(3) {
+.sub-gallery__img:nth-child(3) {
   @include mq("md") {
-    grid-row: 1/3;
+    grid-column: 2/4;
+    grid-row: 2;
   }
 }
 
-.sub-gallery__img img:hover {
+.sub-gallery__img:nth-child(4) {
   @include mq("md") {
-    cursor: pointer;
+    grid-column: 1/3;
+    grid-row: 3;
   }
 }
 
-.sub-gallery__imgs1 .sub-gallery__img:nth-child(1) img,
-.sub-gallery__imgs2 .sub-gallery__img:nth-child(3) img {
-  aspect-ratio: 345 / 523;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.sub-gallery__imgs1 .sub-gallery__img:nth-child(2) img,
-.sub-gallery__imgs1 .sub-gallery__img:nth-child(3) img,
-.sub-gallery__imgs2 .sub-gallery__img:nth-child(1) img,
-.sub-gallery__imgs2 .sub-gallery__img:nth-child(2) img {
-  aspect-ratio: 590 / 369;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.sub-gallery__img:nth-child(5) {
+  @include mq("md") {
+    grid-column: 1/3;
+    grid-row: 4;
+  }
 }
 
-.sub-gallery__imgs2 .sub-gallery__img:nth-child(1) img,
-.sub-gallery__imgs1 .sub-gallery__img:nth-child(2) img {
-  // aspect-ratio: ;
-
+.sub-gallery__img:nth-child(6) {
+  @include mq("md") {
+    grid-column: 3;
+    grid-row: 3/5;
+  }
 }
-

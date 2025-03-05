@@ -1,5 +1,13 @@
 @use "global" as *;
 
+.sub-campaign__tab {
+  max-width: rem(600);
+  width: 100%;
+  @include mq("md") {
+    max-width: inherit;
+  }
+}
+
 .sub-campaign__cards {
   margin-top: rem(35);
   margin-right: rem(36);

@@ -2,13 +2,7 @@
 
 .price-table {
   border-collapse: collapse;
-  max-width: rem(600);
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  @include mq("md") {
-    max-width: rem(702);
-  }
 }
 
 .price-table th,
@@ -85,9 +79,15 @@
 }
 
 .tbody tr td {
+  padding-top: rem(4);
+  padding-bottom: rem(4);
   padding-right: rem(13);
   padding-left: rem(13);
   text-align: right;
+  @include mq("md") {
+    padding-top: rem(16);
+    padding-bottom: rem(16);
+  }
 }
 
 .tbody tr td:nth-of-type(1) {

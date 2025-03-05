@@ -73,7 +73,7 @@
 .sub-campaign-card__price {
   border-top: rem(1) solid $green-accent;
   padding-top: rem(8);
-  margin-top: auto;
+  // margin-top: auto;
   @include mq("md") {
     padding-top: rem(21);
   }

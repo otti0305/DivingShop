@@ -1,0 +1,35 @@
+@use "global" as *;
+
+.aside {
+  display: flex;
+  flex-direction: column;
+  gap: rem(88);
+}
+
+.aside__cards {
+  margin-top: rem(30);
+}
+
+.aside__review {
+  margin-top: rem(30);
+}
+
+.aside__review-link {
+  text-align: center;
+  margin-top: rem(44);
+}
+
+.aside__campaign-cards {
+  margin-top: rem(25);
+}
+
+.aside__campaign-link {
+  text-align: center;
+  margin-top: rem(33);
+}
+
+.aside__archive {
+  margin-top: rem(32);
+  display: grid;
+  gap: rem(5);
+}

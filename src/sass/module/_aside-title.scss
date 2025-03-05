@@ -1,13 +1,13 @@
 @use "global" as *;
 
-.article-title {
+.aside-title {
   font-size: rem(24);
   font-weight: 400;
   padding-left: rem(82);
   position: relative;
 }
 
-.article-title::before {
+.aside-title::before {
   content: "";
   width: rem(8);
   height: rem(50);
@@ -18,7 +18,7 @@
   transform: translateY(-50%);
 }
 
-.article-title::after {
+.aside-title::after {
   content: "";
   width: rem(50);
   height: rem(50);
