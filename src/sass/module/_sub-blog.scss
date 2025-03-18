@@ -1,15 +1,18 @@
 @use "global" as *;
 
+.sub-blog__inner.inner {
+  max-width: rem(600);
+  @include mq("md") {
+    max-width: rem(1130);
+  }
+}
+
 .sub-blog__contents {
   display: flex;
   flex-direction: column;
   gap: rem(88);
-  max-width: rem(600);
-  margin-left: auto;
-  margin-right: auto;
   @include mq("md") {
     flex-direction: inherit;
-    max-width: inherit;
     gap: rem(80);
   }
 }
@@ -23,6 +26,93 @@
 .sub-blog__detail {
   @include mq("md") {
     width: 64.814%;
+  }
+}
+
+.sub-blog__date {
+  font-size: rem(14);
+  line-height: 1.28571;
+}
+
+.sub-blog__title {
+  font-size: rem(24);
+  font-weight: 500;
+  margin-top: rem(8);
+  padding-bottom: rem(3);
+  border-bottom: 1px solid $green-accent;
+  @include mq("md") {
+    font-size: rem(32);
+    padding-bottom: 0;
+    line-height: 1.4;
+  }
+}
+
+.sub-blog__img {
+  margin-top: rem(24);
+  @include mq("md") {
+    margin-top: rem(40);
+  }
+}
+
+.sub-blog__img img {
+  aspect-ratio: 345 / 231;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  @include mq("md") {
+    aspect-ratio: 700 / 468;
+  }
+}
+
+.sub-blog__detail-content {
+  p {
+    margin-top: rem(24);
+    @include mq("md") {
+      margin-top: rem(40);
+    }
+  }
+
+  div {
+    margin-top: rem(24);
+    @include mq("md") {
+      margin-top: rem(40);
+    }
+    img {
+      aspect-ratio: 345 / 231;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      @include mq("md") {
+        aspect-ratio: 700 / 468;
+      }
+    }
+  }
+
+
+  ul {
+    margin-top: rem(24);
+    @include mq("md") {
+      margin-top: rem(40);
+    }
+    li {
+      padding-left: rem(27);
+      position: relative;
+      &::before {
+        content: "";
+        width: rem(18);
+        height: rem(18);
+        background-image: url(/assets/images/common/blog-detail.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: absolute;
+        left: 0;
+        top: 10%;
+      }
+    }
+    li + li {
+      margin-top: rem(4);
+    }
   }
 }
 
@@ -47,11 +137,9 @@
   margin-top: rem(80);
 }
 
-// .sub-blog__content-inner {
-//   margin-left: rem(25);
-//   margin-right: rem(25);
-//   @include mq("md") {
-//     margin-left: 0;
-//     margin-right: 0;
-//   }
-// }
+.sub-blog__detail-pagination {
+  margin-top: rem(40);
+  @include mq("md") {
+    margin-top: rem(80);
+  }
+}

@@ -145,144 +145,42 @@ $(".modal").click(function() {
   return false;
 });
 
-// インフォメーション タブの切り替え
-// $(function() {
-//   var tabs = $(".sub-information-tab__item");
-//   $(".sub-information-tab__item").on("click", function() {
-//       $(tabs).removeClass("is-active");
-//       $(this).addClass("is-active");
-//       const index = tabs.index(this);
-//       $(".sub-information-card").removeClass("is-active").eq(index).addClass("is-active");
-//   });
-  
-//   // $(function () {
-//     //タブへダイレクトリンクの実装
-//     //リンクからハッシュを取得
-//     var hash = location.hash;
-//     hash = (hash.match(/^#tab_panel-\d+$/) || [])[0];
-//     // console.log(hash);
-    
-//     //リンクにハッシュが入っていればtabNameに格納
-//     if ($(hash).length) {
-//       var tabName = hash.slice(1);
-//     } else {
-//       var tabName = "tab_panel-1";
-//     }
-    
-//     //コンテンツ非表示・タブを非アクティブ
-//     $(".sub-information-tab__item").removeClass("is-active");
-//     $(".sub-information-card").removeClass("is-active");
-    
-//     //何番目のタブかを格納
-//     var tabNo = $(".sub-information-card#" + tabName).index();
-    
-//     //コンテンツ表示
-//     $(".sub-information-card").eq(tabNo).addClass("is-active");
-    
-//     //タブのアクティブ化
-//     $(".sub-information-tab__item").eq(tabNo).addClass("is-active");
-//   // });
-  
-  
-// });
 
-$(function () {
-  //タブの実装
-$(".sub-information-tab__item").click(function () {
-   var index = $(".sub-information-tab__item").index(this);
-   $(".sub-information-tab__item, .sub-information-card").removeClass("is-active");
-   $(this).addClass("is-active");
-   $(".sub-information-card").eq(index).addClass("is-active");
-});
-});
-
+// インフォメーション
 document.addEventListener("DOMContentLoaded", function () {
-  // URLからパラメータを取得
-  const params = new URLSearchParams(window.location.search);
-  const tabParam = params.get("sub-information-tab__item"); // "tab" の値を取得
+  const buttons = document.querySelectorAll(".sub-information-tab__item");
+  const contents = document.querySelectorAll(".sub-information-card");
 
-  if (tabParam) {
-      // すべてのタブを非アクティブにする
-      document.querySelectorAll(".sub-information-tab__item").forEach(tab => tab.classList.remove("is-active"));
+  // タブをアクティブにする関数
+  function activateTab(tabId) {
+      buttons.forEach(btn => btn.classList.remove("is-active"));
+      contents.forEach(content => content.classList.remove("is-active"));
 
-      // 指定されたタブをアクティブにする
-      const activeTab = document.getElementById(`sub-information-tab__item-${tabParam}`);
-      if (activeTab) {
-          activeTab.classList.add("is-active");
+      const activeButton = document.querySelector(`.sub-information-tab__item[data-tab="${tabId}"]`);
+      const activeContent = document.getElementById(tabId);
+
+      if (activeButton && activeContent) {
+          activeButton.classList.add("is-active");
+          activeContent.classList.add("is-active");
       }
   }
+
+  // すべてのタブボタンにクリックイベントを追加
+  buttons.forEach(button => {
+      button.addEventListener("click", function () {
+          const tabId = this.getAttribute("data-tab");
+          activateTab(tabId);
+          history.pushState(null, "", `?tab=${tabId}`); // URLを更新
+      });
+  });
+
+  // URLのクエリパラメーターからタブを取得
+  const params = new URLSearchParams(window.location.search);
+  const defaultTab = "tab1"; // デフォルトのタブ
+  const tabFromUrl = params.get("tab") || defaultTab;
+
+  activateTab(tabFromUrl); // 初期表示のタブを設定
 });
-
-// document.addEventListener("DOMContentLoaded", function () {
-//   // URLパラメータから「page」の値を取得する関数
-//   function getParameterByName(name) {
-//     const params = new URLSearchParams(window.location.search);
-//     return params.get(name);
-//   }
-
-//   const pageParam = getParameterByName("page"); // "page" の値を取得
-//   const items = document.querySelectorAll("nav ul li"); // 全ての <li> を取得
-
-//   items.forEach(item => {
-//     // data-id の値を取得し、URLパラメータと比較
-//     if (item.dataset.id === pageParam) {
-//       item.classList.add("is-active"); // 一致する要素に `current` クラスを付与
-//     } else {
-//       item.classList.remove("is-active"); // 他の要素から `current` クラスを削除
-//     }
-//   });
-// });
-
-
-// $(function () {
-//   //タブへダイレクトリンクの実装
-//   //リンクからハッシュを取得
-//   var hash = location.hash;
-//   hash = (hash.match(/^#tab_panel-\d+$/) || [])[0];
-//   //リンクにハッシュが入っていればtabnameに格納
-//   if ($(hash).length) {
-//       var tabname = hash.slice(1);
-//   } else {
-//       var tabname = "tab_panel-1";
-//   }
-//   //コンテンツ非表示・タブを非アクティブ
-//   $(".sub-information-tab__item").removeClass("is-active");
-//   $(".sub-information-card").removeClass("is-active");
-//   //何番目のタブかを格納
-//   var tabno = $(".sub-information-card#" + tabname).index();
-//   //コンテンツ表示
-//   $(".sub-information-card").eq(tabno).addClass("is-active");
-//   //タブのアクティブ化
-//   $(".sub-information-tab__item").eq(tabno).addClass("is-active");
-// });
-
-// $(function() {
-//   //リンクからハッシュを取得
-//   var hash = location.hash;
-//   hash = (hash.match(/^#tab\d+$/) || [])[0];
- 
-//   //リンクにハッシュが入っていればtabnameに格納
-//   if($(hash).length){
-//     var tabname = hash.slice(1) ;
-//   } else{
-//     var tabname = "tab_panel-1";
-//   }
- 
-//   //コンテンツ非表示&amp;タブを非アクティブ
-//   $('.sub-information-card').hide();
-//   $('.sub-information-tab__item').removeClass('is-active');
- 
-//   //何番目のタブかを格納
-//   var tabno = $('.sub-information-card#' + tabname).index();
- 
-//   //コンテンツ表示
-//   $('.sub-information-card').eq(tabno).fadeIn();
- 
-//   //タブのアクティブ化
-//   $('.sub-information-tab__item').eq(tabno).addClass('is-active');
-// });
-
-
 
 
 // アーカイブ

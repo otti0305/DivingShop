@@ -57,9 +57,9 @@
               </ul>
               <ul class="nav__item">
                 <li class="nav__list nav__list--active"><a href="information.html">ダイビング情報</a></li>
-                <li class="nav__list"><a href="#">ライセンス講習</a></li>
-                <li class="nav__list"><a href="#">体験ダイビング</a></li>
-                <li class="nav__list"><a href="#">ファンダイビング</a></li>
+                <li class="nav__list"><a href="information.html?tab=tab1" >ライセンス講習</a></li>
+                <li class="nav__list"><a href="information.html?tab=tab3">体験ダイビング</a></li>
+                <li class="nav__list"><a href="information.html?tab=tab2">ファンダイビング</a></li>
                 <li class="nav__list nav__list--active"><a href="blog.html">ブログ</a></li>
               </ul>
             </div>
@@ -140,7 +140,7 @@
   <main>
     <!-- メインビュー -->
     <div class="sub-mv">
-      <h1 class="sub-mv__title">Blog</h1>
+      <div class="sub-mv__title">Blog</div>
       <div class="sub-mv__img">
         <picture>
           <source media="(min-width: 768px)" srcset="/assets/images/common/sub-blog-pc.jpg">
@@ -165,44 +165,40 @@
     <div class="sub-blog sub-blog-layout sub-illustration">
       <div class="sub-blog__inner inner">
         <div class="sub-blog__contents sub-blog__contents--gap">
-          <div class="sub-blog__detail sub-blog-detail">
-            <div class="sub-blog-detail__date">
+          <div class="sub-blog__detail">
+            <div class="sub-blog__date">
               <time datetime="2024-10-27T19:00">2023/11/17</time>
             </div>
-            <h2 class="sub-blog-detail__title">ライセンス取得</h2>
-            <div class="sub-blog-detail__contents">
-              <div class="sub-blog-detail__content">
-                <div class="sub-blog-detail__img">
-                  <img src="/assets/images/common/blog-img2.jpg" alt="ライセンス取得">
-                </div>
-                <p class="sub-blog-detail__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</p>
-              </div>
-              <div class="sub-blog-detail__content">
-                <div class="sub-blog-detail__img">
-                  <img src="/assets/images/common/blog-img2.jpg" alt="ライセンス取得">
-                </div>
-                <p class="sub-blog-detail__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</p>
-              </div>
+            <h1 class="sub-blog__title">ライセンス取得</h1>
+            <div class="sub-blog__img">
+              <img src="/assets/images/common/blog-img2.jpg" alt="ライセンス取得">
             </div>
-            <ul class="sub-blog-detail__lists">
-              <li class="sub-blog-detail__list">リスト１</li>
-              <li class="sub-blog-detail__list">リスト2</li>
-              <li class="sub-blog-detail__list">リスト3</li>
-            </ul>
-            <p class="sub-blog-detail__description">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</p>
-            <div class="sub-blog-detail__pagination">
+            <div class="sub-blog__detail-content">
+              <p>ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</p>
+              <div>
+                <img src="/assets/images/common/blog-img2.jpg" alt="ライセンス取得">
+              </div>
+              <p>ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</p>
+              <ul>
+                <li>リスト１</li>
+                <li>リスト2</li>
+                <li>リスト3</li>
+              </ul>
+              <p>ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</p>
+            </div>
+            <div class="sub-blog__detail-pagination">
               <ul class="pagination pagination--gap">
                 <li class="pagination__item"><a href="#">
                   <svg xmlns="http://www.w3.org/2000/svg" width="10" height="18" viewBox="0 0 10 18" fill="none">
                     <path d="M9 1L1 9L9 17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
-                 </a>
+                </a>
                 </li>
                 <li class="pagination__item"><a href="#">
                   <svg xmlns="http://www.w3.org/2000/svg" width="10" height="18" viewBox="0 0 10 18" fill="none">
                     <path d="M1 1L9 9L1 17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
-                 </a>
+                </a>
                 </li>
               </ul>
             </div>
@@ -424,9 +420,9 @@
           </ul>
           <ul class="nav__item">
             <li class="nav__list nav__list--active"><a href="information.html">ダイビング情報</a></li>
-            <li class="nav__list"><a href="#">ライセンス講習</a></li>
-            <li class="nav__list"><a href="#">体験ダイビング</a></li>
-            <li class="nav__list"><a href="#">ファンダイビング</a></li>
+            <li class="nav__list"><a href="information.html?tab=tab1" >ライセンス講習</a></li>
+            <li class="nav__list"><a href="information.html?tab=tab3">体験ダイビング</a></li>
+            <li class="nav__list"><a href="information.html?tab=tab2">ファンダイビング</a></li>
             <li class="nav__list nav__list--active"><a href="blog.html">ブログ</a></li>
           </ul>
         </div>
