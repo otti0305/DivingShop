@@ -91,7 +91,7 @@ const cssSass = () => {
       // Sassコンパイルが完了したことを通知
       .pipe(
         notify({
-          message: "Sassをコンパイルしました！",
+          message: "Sassをコンパイルしました",
           onLast: true,
         })
       )
