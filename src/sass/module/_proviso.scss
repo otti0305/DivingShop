@@ -20,6 +20,15 @@
 .proviso__text-body {
   margin-top: rem(40);
   line-height: 2;
+
+  p {
+    margin-top: rem(32);
+  }
+
+  ol {
+    list-style: auto;
+    padding-left: rem(23);
+  }
 }
 
 .proviso__text-title {
