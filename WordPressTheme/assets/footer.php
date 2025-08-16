@@ -41,7 +41,7 @@ if ( ! is_404() ) $footer_classes[] = 'top-footer';
         </div>
         <div class="nav__items">
           <ul class="nav__item">
-            <li class="nav__list nav__list--active"><a href="<?= esc_url(get_permalink(get_page_by_path('voice'))); ?>">お客様の声</a></li>
+            <li class="nav__list nav__list--active"><a href="<?php echo esc_url( get_post_type_archive_link( 'voice' ) ); ?>">お客様の声</a></li>
             <?php
               $price_page = get_page_by_path('price');
               $price_url  = $price_page ? get_permalink($price_page) : '';

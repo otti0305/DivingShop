@@ -11,6 +11,16 @@
   }
 }
 
+.accordion__header .q-text{
+  display: inline-block;
+  max-width: 15em;        /* お好みで 12em, 14em など微調整 */
+  // line-height: 1.6;
+  word-break: break-word; /* 英数字が長くても折り返す */
+  @include mq("md") {
+    max-width: inherit;
+  }
+}
+
 .accordion__header:hover {
   cursor: pointer;
 }

@@ -162,12 +162,14 @@ button,
 	+ span {
 		display: inline-block;
 		position: relative;
-		padding: 0 0 0 rem(22);
+		padding: 0 0 0 rem(35);
 		margin: 0 $check-space-betweenRadio 0 0;
 		font-size: $check-fz;
 		line-height: 1;
 		cursor: pointer;
 		transition: 0.3s ease;
+		line-height: rem(22);
+		text-align: left;
 
 		&::before {
 			position: absolute;
@@ -273,3 +275,22 @@ textarea {
   width: 100%;
   max-width: rem(600);
 }
+
+
+
+/* CF7の1項目 */
+// .form__checkbox .wpcf7-list-item > label{
+//   display: flex;
+//   align-items: flex-start;   /* ←ここで上揃え */
+//   gap: 12px;
+// }
+
+/* 四角は擬似要素のままでもOK。中央寄せを解除 */
+// .form__checkbox .wpcf7-list-item-label{
+//   position: relative;
+//   line-height: 1.8;
+// }
+// .form__checkbox .wpcf7-list-item-label::before{
+//   top: .2em;                 /* 上揃え */
+//   transform: none;
+// }

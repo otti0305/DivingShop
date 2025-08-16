@@ -300,6 +300,12 @@ body:not(.error404) .top-footer {
 	position: relative;
 }
 
+.accordion__header .q-text {
+	display: inline-block;
+	max-width: 15em; /* お好みで 12em, 14em など微調整 */
+	word-break: break-word; /* 英数字が長くても折り返す */
+}
+
 .accordion__header:hover {
 	cursor: pointer;
 }
@@ -743,6 +749,10 @@ body:not(.error404) .top-footer {
 .blog__link {
 	margin-top: 2.375rem;
 	text-align: center;
+}
+
+.breadcrumb {
+	font-size: 0.875rem;
 }
 
 .breadcrumb__lists {
@@ -1204,17 +1214,11 @@ body:not(.error404) .top-footer {
 
 .form__checkbox {
 	margin-top: 2.5rem;
+	text-align: center;
 }
 
 .form__checkbox span {
 	font-size: 0.875rem !important;
-	line-height: 1.5714 !important;
-	margin-left: 1.875rem !important;
-	padding-left: 2rem !important;
-}
-
-.form__checkbox span {
-	text-align: left;
 }
 
 .form__checkbox span::before {
@@ -3012,9 +3016,11 @@ button,
 	display: inline-block;
 	font-size: 1rem;
 	line-height: 1;
+	line-height: 1.375rem;
 	margin: 0 1.25rem 0 0;
-	padding: 0 0 0 1.375rem;
+	padding: 0 0 0 2.1875rem;
 	position: relative;
+	text-align: left;
 	transition: 0.3s ease;
 }
 
@@ -3110,6 +3116,10 @@ textarea {
 	max-width: 37.5rem;
 	width: 100%;
 }
+
+/* CF7の1項目 */
+
+/* 四角は擬似要素のままでもOK。中央寄せを解除 */
 
 @media screen and (min-width: 768px) {
 
@@ -3263,6 +3273,10 @@ body:not(.error404) .top-footer {
 .accordion__header {
 	font-size: 1.25rem;
 	padding: 1.625rem 2.5rem;
+}
+
+.accordion__header .q-text {
+	max-width: inherit;
 }
 
 .accordion__header::before,
@@ -3554,11 +3568,6 @@ body:not(.error404) .top-footer {
 
 .form__checkbox {
 	margin-top: 4.875rem;
-}
-
-.form__checkbox span {
-	margin-left: 1.125rem !important;
-	padding-left: 2.4375rem !important;
 }
 
 .form__button {

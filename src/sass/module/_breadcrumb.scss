@@ -1,5 +1,9 @@
 @use "global" as *;
 
+.breadcrumb {
+  font-size: rem(14);
+}
+
 .breadcrumb__lists {
   display: flex;
   align-items: center;

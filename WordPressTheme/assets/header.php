@@ -89,7 +89,7 @@
               </a>
             </li>
             <li class="pc-nav__item">
-              <a href="<?= esc_url(get_permalink(get_page_by_path('voice'))); ?>">
+              <a href="<?php echo esc_url( get_post_type_archive_link( 'voice' ) ); ?>">
                 <div class="pc-nav__en">Voice</div>
                 <div class="pc-nav__ja">お客様の声</div>
               </a>

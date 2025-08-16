@@ -109,21 +109,21 @@
 
 .form__checkbox {
   margin-top: rem(40);
-  // text-align: center;
+  text-align: center;
   @include mq("md") {
     margin-top: rem(78);
   }
 }
 
 .form__checkbox span {
-  padding-left: rem(32) !important;
-  margin-left: rem(30) !important;
+  // padding-left: rem(32) !important;
+  // margin-left: rem(30) !important;
   font-size: rem(14) !important;
-  line-height: 1.5714 !important;
-  text-align: left;
+  // line-height: 1.5714 !important;
+  // text-align: left;
   @include mq("md") {
-    padding-left: rem(39) !important;
-    margin-left: rem(18) !important;
+    // padding-left: rem(39) !important;
+    // margin-left: rem(18) !important;
   }
 }
 

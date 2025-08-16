@@ -25,7 +25,9 @@
         ?>
         <div class="accordion-contents__item">
           <div class="accordion">
-            <div class="accordion__header"><?php echo esc_html($faq['question']); ?></div>
+          <div class="accordion__header">
+            <span class="q-text"><?php echo esc_html( $faq['question'] ); ?></span>
+          </div>
             <p class="accordion__text"> <?php echo wp_kses_post($faq['answer']); ?></p>
           </div>
         </div>

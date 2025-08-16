@@ -77,7 +77,7 @@
               $campaign_query = new WP_Query(
                 array(
                   'post_type'           => 'campaign',
-                  'post_per_page'       => -1,
+                  'posts_per_page'       => -1,
                   'orderby'             => 'date',
                   'order'               => 'DESC',
                   'ignore_sticky_posts' => true,
@@ -317,7 +317,7 @@
                 $excerpt = get_the_excerpt(); // 無ければ自動生成
           ?>
           <div class="voice-cards__item">
-            <a href="#" class="voice-card">
+            <div class="voice-card">
               <div class="voice-card__head">
                 <div class="voice-card__info">
                   <div class="voice-card__meta">
@@ -334,7 +334,7 @@
               <div class="voice-card__body">
                 <div class="voice-card__text"><?php echo esc_html($excerpt); ?></div>
               </div>
-            </a>
+            </div>
           </div>
           <?php
             endwhile;
@@ -343,7 +343,7 @@
           ?>
         </div>
         <div class="voice__link">
-          <a href="<?= esc_url(get_permalink(get_page_by_path('voice'))); ?>" class="view-link">
+          <a href="<?php echo esc_url( get_post_type_archive_link( 'voice' ) ); ?>" class="view-link">
             <div class="view-link__content">
               <div class="view-link__title">View more</div>
               <div class="view-link__icon"></div>
