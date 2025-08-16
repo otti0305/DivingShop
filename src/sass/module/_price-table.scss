@@ -3,6 +3,9 @@
 .price-table {
   border-collapse: collapse;
   width: 100%;
+  @include mq("md") {
+    width: 71.51%;
+  }
 }
 
 .price-table th,
@@ -10,6 +13,13 @@
   border: 1px solid $green-accent;
   height: rem(60);
 }
+
+/* 右カラムの見た目（必要に応じて調整） */
+.price-table td.price-cell {
+  text-align: right;
+  white-space: nowrap;
+}
+
 
 .price-table th {
   padding-left: rem(30);
@@ -39,7 +49,7 @@
   content: "";
   width: rem(24);
   height: rem(24);
-  background-image: url(/assets/images/common/table-icon.png);
+  background-image: url(../images/common/table-icon.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -52,30 +62,20 @@
 .display-pc {
   display: none;
   @include mq("md") {
-    display: table-cell;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: rem(8);
     background-color: $green-accent;
     color: $white;
+    width: 28.49%;
   }
 }
 
-.display-pc span  {
-  position: relative;
-}
-
-.display-pc span::after {
-  @include mq("md") {
-    content: "";
-    width: rem(64);
-    height: rem(64);
-    background-image: url(/assets/images/common/table-icon.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    position: absolute;
-    top: rem(32);
-    left: 50%;
-    transform: translateX(-50%);
-  }
+.display-pc__img img {
+  width: rem(64);
+  height: rem(64);
 }
 
 .tbody tr td {
@@ -103,5 +103,54 @@
   width: 30.435%;
   @include mq("md") {
     width: 23.076%;
+  }
+}
+
+
+
+.price-block {
+  margin-bottom: 3rem;
+  display: flex;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    background-color: $green-accent;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 4px 4px 0 0;
+  }
+
+  &__icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    margin-right: 0.75rem;
+  }
+
+  &__title {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+}
+
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+
+  td {
+    border: 1px solid #ccc;
+    padding: 0.75rem;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  &__course {
+    text-align: left;
+  }
+
+  &__price {
+    text-align: right;
+    white-space: nowrap;
   }
 }

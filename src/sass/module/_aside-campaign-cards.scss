@@ -11,3 +11,7 @@
     width: 100%;
   }
 }
+
+.aside-campaign-cards__item + .aside-campaign-cards__item {
+  margin-top: rem(40);
+}

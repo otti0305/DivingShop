@@ -64,7 +64,7 @@
           </div>
           <p class="contact__form-text">ご予約・お問い合わせはコチラ</p>
           <div class="contact__link">
-            <a href="#" class="view-link">
+            <a href="<?= esc_url(get_permalink(get_page_by_path('contact'))); ?>" class="view-link">
               <div class="view-link__content">
                 <div class="view-link__title">Contact us</div>
                 <div class="view-link__icon"></div>

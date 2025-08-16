@@ -15,7 +15,7 @@
   content: "";
   width: rem(345);
   height: rem(294);
-  // background-image: url(/assets/images/common/404-bg.png);
+  background-image: url(../images/common/404-bg.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -33,6 +33,7 @@
 
 .not-found__breadcrumb {
   margin-top: rem(8);
+  color: #fff;
 }
 
 .not-found__title {

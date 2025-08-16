@@ -6,3 +6,13 @@
     margin-top: rem(160);
   }
 }
+
+// /* top-footer.scss など */
+body:not(.error404) {
+  .top-footer {
+    margin-top: rem(103);
+    @include mq("md") {
+      margin-top: rem(160);
+    }
+  }
+}

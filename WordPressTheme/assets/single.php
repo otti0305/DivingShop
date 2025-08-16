@@ -2,7 +2,7 @@
 <main>
   <!-- メインビュー -->
   <div class="sub-mv">
-    <h1 class="sub-mv__title">Blog</h1>
+    <div class="sub-mv__title">Blog</div>
     <div class="sub-mv__img">
       <picture>
         <source media="(min-width: 768px)" srcset="<?php echo get_theme_file_uri(); ?>/images/common/sub-blog-pc.jpg">
@@ -11,55 +11,45 @@
     </div>
   </div>
 
-
-  <?php
-    $categories = get_the_category();
-    if ( ! empty( $categories ) ) :
-        foreach( $categories as $category ) :
-            if ( $category->slug !== 'uncategorized' ) :
-                echo esc_html( $category->name );
-            endif;
-        endforeach;
-    endif;
-  ?>
   <!-- パンくず -->
-  <?php get_template_part('template-parts/breadcrumb') ?>
+  <?php get_template_part('template-parts/breadcrumb'); ?>
 
   <div class="sub-blog sub-blog-layout sub-illustration">
     <div class="sub-blog__inner inner">
-      <div class="sub-blog__contents">
-        <div class="sub-blog__content">
-          <div class="sub-blog__cards blog-cards blog-cards--2col">
-            <?php if(have_posts()) :
-              while(have_posts()) :
-                the_post(); ?>
-                <div class="blog-cards__item">
-                  <a href="<?php the_permalink(); ?>" class="blog-card">
-                    <div class="blog-card__img">
-                    <?php if (has_post_thumbnail()) : ?>
-                      <?php the_post_thumbnail(); ?>
-                      <?php else : ?>
-                      <img src="<?php echo get_template_directory_uri(); ?>/images/common/noimg.png" alt="noimgの画像">
-                      <?php endif; ?>
-                    </div>
-                    <div class="blog-card__body">
-                      <div class="blog-card__date">
-                        <time datetime="<?php the_time('c'); ?>"><?php the_time('Y/n/j'); ?></time>
-                      </div>
-                      <h3 class="blog-card__title"><?php the_title(); ?></h3>
-                    </div>
-                    <p class="blog-card__text"><?php the_excerpt(); ?></p>
-                  </a>
-                </div>
-            <?php endwhile; endif; ?>
+      <div class="sub-blog__contents sub-blog__contents--gap">
+        <div class="sub-blog__detail">
+          <div class="sub-blog__date">
+            <time datetime="<?php the_time('c'); ?>"><?php the_time('Y/n/j'); ?></time>
           </div>
-          <div class="sub-blog__pagination">
-            <div class="pagination">
-              <?php if (function_exists('wp_pagenavi')) { wp_pagenavi(); } ?>
+          <h1 class="sub-blog__title"><?php the_title(); ?></h1>
+          <div class="sub-blog__img">
+            <?php if (has_post_thumbnail()) : ?>
+            <?php the_post_thumbnail(); ?>
+            <?php else : ?>
+            <img src="<?php echo get_template_directory_uri(); ?>/img/noimg.png" alt="">
+            <?php endif; ?>
+          </div>
+          <div class="sub-blog__detail-content">
+            <?php the_content(); ?>
+          </div>
+          <div class="sub-blog__detail-pagination">
+            <ul class="pagination pagination--gap">
+              <li class="pagination__item"><a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="18" viewBox="0 0 10 18" fill="none">
+                  <path d="M9 1L1 9L9 17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+              </li>
+              <li class="pagination__item"><a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="18" viewBox="0 0 10 18" fill="none">
+                  <path d="M1 1L9 9L1 17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+              </li>
+            </ul>
             </div>
-          </div>
         </div>
-        <?php get_sidebar(); ?>
+       <?php get_sidebar(); ?>
       </div>
     </div>
   </div>
@@ -103,4 +93,5 @@
     </div>
   </section>
 </main>
+
 <?php get_footer(); ?>

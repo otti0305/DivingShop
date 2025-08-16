@@ -95,7 +95,7 @@
   content: "";
   width: rem(12);
   height: rem(12);
-  background-image: url(/assets/images/common/form-select.png);
+  background-image: url(../images/common/form-select.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -109,7 +109,7 @@
 
 .form__checkbox {
   margin-top: rem(40);
-  text-align: center;
+  // text-align: center;
   @include mq("md") {
     margin-top: rem(78);
   }
@@ -151,6 +151,10 @@ input.invalid,
 textarea.invalid {
   border: 1px solid #C94800;
   background: rgba(201, 72, 0, 0.20);
+}
+
+.wpcf7-form-control-wrap {
+  width: 100%;
 }
 
 

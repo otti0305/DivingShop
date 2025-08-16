@@ -35,5 +35,95 @@
   color: $white;
 }
 
+/* ========== PageNavi 基本 ========== */
+.wp-pagenavi{
+  display:flex;
+  gap: rem(12);
+  justify-content:center;
+  align-items:center;
+  // margin-top:32px;
+  font-size:0; /* 子要素で管理 */
+}
+
+/* ボタン共通（数字・現在・矢印すべて） */
+.wp-pagenavi a,
+.wp-pagenavi span{
+  width:rem(38);
+  height:rem(38);
+  display:grid;
+  place-items:center;
+  border: 1px solid $green-accent;
+  color: $green-accent;
+  background:#fff;
+  font-size:16px;
+  line-height:1;
+  text-decoration:none;
+  transition:background .2s, color .2s, border-color .2s, opacity .2s;
+}
+
+/* 現在ページ（塗り） */
+.wp-pagenavi span.current{
+  background:$green-accent;
+  color:#fff;
+  border-color:$green-accent;
+  font-weight:700;
+}
+
+/* ホバー */
+.wp-pagenavi a:hover{
+  background:$green-accent;
+  color:#fff;
+}
+
+/* “Pages: 1/5” と “…” は非表示に */
+.wp-pagenavi .pages,
+.wp-pagenavi .extend{ display:none; }
+
+/* 矢印（前へ・次へ） */
+// .wp-pagenavi a.previouspostslink,
+// .wp-pagenavi a.nextpostslink{
+//   font-size:18px; /* ‹ › をそのまま表示する場合 */
+// }
+
+/* ──もしSVGアイコンで描きたい場合（‹ › テキストを隠して差し替え）── */
+
+
+.wp-pagenavi a.previouspostslink,
+.wp-pagenavi a.nextpostslink{
+  position:relative;
+  font-size:0;     // テキストを隠す
+}
+
+.wp-pagenavi a.previouspostslink::before,
+.wp-pagenavi a.nextpostslink::before{
+  content: "";
+  position: relative;
+  top: 20%;
+  inline-size: rem(8);
+  block-size: rem(16);
+  background: currentColor;
+  -webkit-mask: url("../images/common/icon-arrow.svg") no-repeat 50% 50% / contain;
+          mask: url("../images/common/icon-arrow.svg") no-repeat 50% 50% / contain;
+}
+
+.wp-pagenavi a.previouspostslink {
+  margin-right: rem(28);
+}
+
+.wp-pagenavi a.nextpostslink {
+  margin-left: rem(28);
+}
+
+.wp-pagenavi a.previouspostslink::before{ transform: rotate(180deg); }
+
+
+
+
+
+
+
+
+
+
 
 

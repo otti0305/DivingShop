@@ -7,3 +7,10 @@
     gap: rem(76);
   }
 }
+
+.price-tables__content {
+  display: flex;
+}
+
+html { scroll-behavior: smooth; }            /* なめらかスクロール */
+.price-tables__content { scroll-margin-top: rem(100); } /* 固定ヘッダーの高さに合わせて調整 */

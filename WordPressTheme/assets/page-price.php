@@ -13,139 +13,107 @@
   </div>
 
   <!-- パンくず -->
-  <nav class="breadcrumb layout-breadcrumb">
-    <div class="breadcrumb__inner inner">
-      <ul class="breadcrumb__lists">
-        <li class="breadcrumb__list"><a href="index.html">TOP</a></li>
-        <li class="breadcrumb__list"><img img src="<?php echo get_theme_file_uri(); ?>/images/common/breadcrumb-arrow.png" alt=""></li>
-        <li class="breadcrumb__list">料金一覧</li>
-      </ul>
-    </div>
-  </nav>
+  <?php get_template_part('template-parts/breadcrumb') ?>
 
   <div class="sub-price sub-illustration">
     <div class="sub-price__inner inner">
-      <div class="sub-price__tables price-tables">
-        <div class="price-tables__content">
+    <div class="sub-price__tables price-tables">
+      <?php
+        // 1回だけ取得
+        $categories = SCF::get('price_category');
+
+        // 価格フォーマッタは最初に定義
+        if ( !function_exists('format_price') ) {
+          function format_price($price) {
+            $price = preg_replace('/[^\d]/u', '', (string)$price);
+            if ($price === '') return '';
+            return '¥' . number_format((int)$price);
+          }
+        }
+
+        if ( !empty($categories) && is_array($categories) ) :
+          foreach ( $categories as $category ) :
+
+            // 名称とスラッグ
+            $name = isset($category['category_name']) ? trim($category['category_name']) : '';
+            if ( $name === '' ) continue;
+            $slug = !empty($category['category_slug']) ? $category['category_slug'] : sanitize_title($name);
+       ?>
+        <section id="price-<?php echo esc_attr($slug); ?>" class="price-tables__content">
+          <div class="display-pc">
+            <p><?php echo esc_html($name); ?></p>
+            <?php if ( !empty($category['category_icon']) ) : ?>
+              <div class="display-pc__img">
+                <img src="<?php echo esc_url( wp_get_attachment_url($category['category_icon']) ); ?>"
+                    alt="<?php echo esc_attr($name); ?>">
+              </div>
+            <?php endif; ?>
+          </div>
+
           <table class="price-table">
             <thead class="thead">
-              <tr>
-                <th colspan="2"><span>ライセンス講習</span></th>
-              </tr>
+              <tr><th colspan="2"><span><?php echo esc_html($name); ?></span></th></tr>
             </thead>
             <tbody class="tbody">
-              <tr>
-                <th class="display-pc" rowspan="3"><span>ライセンス講習</span></th>
-                <td>オープンウォーター<br class="u-mobile">
-                  ダイバーコース</td>
-                <td>¥50,000</td>
-              </tr>
-              <tr>
-                <td>アドバンスド<br class="u-mobile">
-                  オープンウォーターコース</td>
-                <td>¥60,000</td>
-              </tr>
-              <tr>
-                <td>レスキュー＋EFRコース</td>
-                <td>¥70,000</td>
-              </tr>
+              <?php
+                // 文字列1行から「コース名」「価格数値」を取り出す
+                if ( !function_exists('my_parse_course_row') ) {
+                  function my_parse_course_row(string $row): array {
+                    $row = trim($row);
+                    if ($row === '') return ['', ''];
+
+                    // 全角 → 半角の簡易正規化
+                    $map = ['０'=>'0','１'=>'1','２'=>'2','３'=>'3','４'=>'4','５'=>'5','６'=>'6','７'=>'7','８'=>'8','９'=>'9','，'=>',','　'=>' '];
+                    $row = strtr($row, $map);
+
+                    // 「区切り(空白/カンマ/全角カンマ/コロン/縦棒) + 数字」で終わるパターンを優先
+                    if (preg_match('/^(.*?)[\s,、|：:]+(\d[\d,]*)\s*$/u', $row, $m)) {
+                      return [trim($m[1]), $m[2]];
+                    }
+                    // 後方にある連続数字(カンマ含む)を価格として拾うフォールバック
+                    if (preg_match('/(\d[\d,]*)\s*$/u', $row, $m)) {
+                      $name = trim(substr($row, 0, -strlen($m[1])));
+                      return [$name, $m[1]];
+                    }
+                    return [$row, ''];
+                  }
+                }
+
+                // 価格整形
+                if ( !function_exists('format_price') ) {
+                  function format_price($price) {
+                    // 数字だけに
+                    $num = preg_replace('/[^\d]/u', '', (string)$price);
+                    if ($num === '') return '';
+                    return '¥' . number_format((int)$num);
+                  }
+                }
+
+                $list_raw = isset($category['course_list']) ? (string)$category['course_list'] : '';
+                $rows = preg_split("/\r\n|\n|\r/", $list_raw);
+
+                foreach ($rows as $row):
+                  if (trim($row) === '') continue;
+                  list($course_name, $price_raw) = my_parse_course_row($row);
+              ?>
+                <tr>
+                  <td><?php echo esc_html($course_name); ?></td>
+                  <td class="price-cell"><?php echo esc_html( format_price($price_raw) ); ?></td>
+                </tr>
+              <?php endforeach; ?>
             </tbody>
+
           </table>
-        </div>
-        <div class="price-tables__content">
-          <table class="price-table">
-            <thead class="thead">
-              <tr>
-                <th colspan="2"><span>体験ダイビング</span></th>
-              </tr>
-            </thead>
-            <tbody class="tbody">
-              <tr>
-                <th class="display-pc" rowspan="4"><span>体験ダイビング</span></th>
-                <td>ビーチ体験ダイビング<br class="u-mobile">
-                  (半日)</td>
-                <td>¥7,000</td>
-              </tr>
-              <tr>
-                <td>ビーチ体験ダイビング<br class="u-mobile">
-                  (1日)</td>
-                <td>¥14,000</td>
-              </tr>
-              <tr>
-                <td>ボート体験ダイビング<br class="u-mobile">
-                  (半日)</td>
-                <td>¥10,000</td>
-              </tr>
-              <tr>
-                <td>ボート体験ダイビング<br class="u-mobile">
-                  (1日)</td>
-                <td>¥18,000</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="price-tables__content">
-          <table class="price-table">
-            <thead class="thead">
-              <tr>
-                <th colspan="2"><span>ファンダイビング</span></th>
-              </tr>
-            </thead>
-            <tbody class="tbody">
-              <tr>
-                <th class="display-pc" rowspan="4"><span>ファンダイビング</span></th>
-                <td>ビーチダイビング<br class="u-mobile">
-                  (2ダイブ)</td>
-                <td>¥14,000</td>
-              </tr>
-              <tr>
-                <td>ボートダイビング<br class="u-mobile">
-                  (2ダイブ)</td>
-                <td>¥18,000</td>
-              </tr>
-              <tr>
-                <td>スペシャルダイビング<br class="u-mobile">
-                  (2ダイブ)</td>
-                <td>¥24,000</td>
-              </tr>
-              <tr>
-                <td>ナイトダイビング<br class="u-mobile">
-                  (1ダイブ)</td>
-                <td>¥10,000</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="price-tables__content">
-          <table class="price-table">
-            <thead class="thead">
-              <tr>
-                <th colspan="2"><span>スペシャルダイビング</span></th>
-              </tr>
-            </thead>
-            <tbody class="tbody">
-              <tr>
-                <th class="display-pc" rowspan="3"><span>スペシャルダイビング</span></th>
-                <td>貸切ダイビング<br class="u-mobile">
-                  (2ダイブ)</td>
-                <td>¥24,000</td>
-              </tr>
-              <tr>
-                <td>1日ダイビング<br class="u-mobile">
-                  (3ダイブ)</td>
-                <td>¥32,000</td>
-              </tr>
-              <tr>
-                <td>ナイトダイビング<br class="u-mobile">
-                  (2ダイブ)</td>
-                <td>¥14,000</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        </section>
+        <?php
+            endforeach;
+          endif;
+        ?>
       </div>
+
     </div>
   </div>
+  <!-- </div> -->
 
   <section class="contact sub-contact contact-illustration">
     <div class="contact__inner inner">
@@ -174,7 +142,7 @@
           </div>
           <p class="contact__form-text">ご予約・お問い合わせはコチラ</p>
           <div class="contact__link">
-            <a href="#" class="view-link">
+            <a href="<?= esc_url(get_permalink(get_page_by_path('contact'))); ?>" class="view-link">
               <div class="view-link__content">
                 <div class="view-link__title">Contact us</div>
                 <div class="view-link__icon"></div>
@@ -186,6 +154,5 @@
     </div>
   </section>
 </main>
-
 
 <?php get_footer(); ?>

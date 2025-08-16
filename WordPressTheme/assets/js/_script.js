@@ -210,9 +210,3 @@ $('.js-submit').on("click", function () {
   }
   return false; // submitの送信中止用
 });
-
-//thanksページへ遷移
-document.addEventListener('wpcf7mailsent', function (event) {
-  window.location.href = 'http://divingshop.local/contact/thanks/';
-}, false);
-

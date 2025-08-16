@@ -210,6 +210,10 @@ a {
 	margin-top: 6.4375rem;
 }
 
+body:not(.error404) .top-footer {
+	margin-top: 6.4375rem;
+}
+
 .top-information {
 	margin-top: 4.6875rem;
 }
@@ -349,7 +353,7 @@ a {
 }
 
 .archive__year::before {
-	background-image: url(/assets/images/common/archive-icon.png);
+	background-image: url(../images/common/archive-icon.png);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
@@ -363,7 +367,7 @@ a {
 }
 
 .archive__year.is-open::before {
-	background-image: url(/assets/images/common/archive-open.png);
+	background-image: url(../images/common/archive-open.png);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
@@ -393,7 +397,7 @@ a {
 }
 
 .archive__month::before {
-	background-image: url(/assets/images/common/archive-icon.png);
+	background-image: url(../images/common/archive-icon.png);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
@@ -508,6 +512,10 @@ a {
 	gap: 2.5rem;
 }
 
+.aside-campaign-cards__item + .aside-campaign-cards__item {
+	margin-top: 2.5rem;
+}
+
 .aside-card {
 	background-color: #fff;
 	box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
@@ -600,7 +608,7 @@ a {
 }
 
 .aside-title::after {
-	background-image: url(/assets/images/common/article-icon.png);
+	background-image: url(../images/common/article-icon.png);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -764,6 +772,10 @@ a {
 	color: #fff;
 }
 
+.breadcrumb .breadcrumb-sep {
+	margin: 0 0.5rem;
+}
+
 .campaign-card {
 	background-color: #fff;
 	box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
@@ -780,6 +792,7 @@ a {
 
 .campaign-card__img img {
 	-o-object-fit: cover;
+	aspect-ratio: 334/223;
 	height: 100%;
 	object-fit: cover;
 	width: 100%;
@@ -922,6 +935,7 @@ a {
 }
 
 .contact-illustration::after {
+	background-image: url(../images/common/fish-img1.png);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -1079,7 +1093,7 @@ a {
 }
 
 .form-button::before {
-	background-image: url(/assets/images/common/send-icon.png);
+	background-image: url(../images/common/send-icon.png);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
@@ -1176,7 +1190,7 @@ a {
 }
 
 .form__item-select::after {
-	background-image: url(/assets/images/common/form-select.png);
+	background-image: url(../images/common/form-select.png);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
@@ -1190,7 +1204,6 @@ a {
 
 .form__checkbox {
 	margin-top: 2.5rem;
-	text-align: center;
 }
 
 .form__checkbox span {
@@ -1224,6 +1237,10 @@ input.invalid,
 textarea.invalid {
 	background: rgba(201, 72, 0, 0.2);
 	border: 1px solid #C94800;
+}
+
+.wpcf7-form-control-wrap {
+	width: 100%;
 }
 
 .header {
@@ -1521,6 +1538,7 @@ textarea.invalid {
 }
 
 .not-found::after {
+	background-image: url(../images/common/404-bg.png);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -1534,6 +1552,7 @@ textarea.invalid {
 }
 
 .not-found__breadcrumb {
+	color: #fff;
 	margin-top: 0.5rem;
 }
 
@@ -1586,7 +1605,7 @@ body {
 }
 
 .page-top a::after {
-	background-image: url(/assets/images/common/page-top.png);
+	background-image: url(../images/common/page-top.png);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -1690,6 +1709,93 @@ body {
 	color: #fff;
 }
 
+/* ========== PageNavi 基本 ========== */
+
+.wp-pagenavi {
+	align-items: center;
+	display: flex;
+	font-size: 0; /* 子要素で管理 */
+	gap: 0.75rem;
+	justify-content: center;
+}
+
+/* ボタン共通（数字・現在・矢印すべて） */
+
+.wp-pagenavi a,
+.wp-pagenavi span {
+	-webkit-text-decoration: none;
+	align-items: center;
+	background: #fff;
+	border: 1px solid #408F95;
+	color: #408F95;
+	display: grid;
+	font-size: 16px;
+	height: 2.375rem;
+	justify-items: center;
+	line-height: 1;
+	place-items: center;
+	text-decoration: none;
+	transition: background 0.2s, color 0.2s, border-color 0.2s, opacity 0.2s;
+	width: 2.375rem;
+}
+
+/* 現在ページ（塗り） */
+
+.wp-pagenavi span.current {
+	background: #408F95;
+	border-color: #408F95;
+	color: #fff;
+	font-weight: 700;
+}
+
+/* ホバー */
+
+.wp-pagenavi a:hover {
+	background: #408F95;
+	color: #fff;
+}
+
+/* “Pages: 1/5” と “…” は非表示に */
+
+.wp-pagenavi .pages,
+.wp-pagenavi .extend {
+	display: none;
+}
+
+/* 矢印（前へ・次へ） */
+
+/* ──もしSVGアイコンで描きたい場合（‹ › テキストを隠して差し替え）── */
+
+.wp-pagenavi a.previouspostslink,
+.wp-pagenavi a.nextpostslink {
+	font-size: 0;
+	position: relative;
+}
+
+.wp-pagenavi a.previouspostslink::before,
+.wp-pagenavi a.nextpostslink::before {
+	-webkit-mask: url("../images/common/icon-arrow.svg") no-repeat 50% 50%/contain;
+	background: currentColor;
+	content: "";
+	height: 1rem;
+	mask: url("../images/common/icon-arrow.svg") no-repeat 50% 50%/contain;
+	position: relative;
+	top: 20%;
+	width: 0.5rem;
+}
+
+.wp-pagenavi a.previouspostslink {
+	margin-right: 1.75rem;
+}
+
+.wp-pagenavi a.nextpostslink {
+	margin-left: 1.75rem;
+}
+
+.wp-pagenavi a.previouspostslink::before {
+	transform: rotate(180deg);
+}
+
 .header__pc-nav,
 .pc-nav__items,
 .pc-nav__item {
@@ -1786,6 +1892,13 @@ body {
 	height: 3.75rem;
 }
 
+/* 右カラムの見た目（必要に応じて調整） */
+
+.price-table td.price-cell {
+	text-align: right;
+	white-space: nowrap;
+}
+
 .price-table th {
 	height: 2.5rem;
 	padding-left: 1.875rem;
@@ -1801,7 +1914,7 @@ body {
 }
 
 .thead tr th span::after {
-	background-image: url(/assets/images/common/table-icon.png);
+	background-image: url(../images/common/table-icon.png);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -1818,8 +1931,9 @@ body {
 	display: none;
 }
 
-.display-pc span {
-	position: relative;
+.display-pc__img img {
+	height: 4rem;
+	width: 4rem;
 }
 
 .tbody tr td {
@@ -1839,11 +1953,75 @@ body {
 	width: 30.435%;
 }
 
+.price-block {
+	display: flex;
+	margin-bottom: 3rem;
+}
+
+.price-block__header {
+	align-items: center;
+	background-color: #408F95;
+	border-radius: 4px 4px 0 0;
+	color: #fff;
+	display: flex;
+	padding: 1rem;
+}
+
+.price-block__icon {
+	-o-object-fit: contain;
+	height: 40px;
+	margin-right: 0.75rem;
+	object-fit: contain;
+	width: 40px;
+}
+
+.price-block__title {
+	font-size: 1.2rem;
+	font-weight: bold;
+}
+
+.price-table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.price-table td {
+	border: 1px solid #ccc;
+	font-size: 1rem;
+	line-height: 1.4;
+	padding: 0.75rem;
+}
+
+.price-table__course {
+	text-align: left;
+}
+
+.price-table__price {
+	text-align: right;
+	white-space: nowrap;
+}
+
 .price-tables {
 	grid-gap: 2.375rem;
 	display: grid;
 	gap: 2.375rem;
 }
+
+.price-tables__content {
+	display: flex;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+/* なめらかスクロール */
+
+.price-tables__content {
+	scroll-margin-top: 6.25rem;
+}
+
+/* 固定ヘッダーの高さに合わせて調整 */
 
 .price {
 	background-color: #DDF0F1;
@@ -1948,7 +2126,7 @@ body {
 }
 
 .site-map-illustration::after {
-	background-image: url(/assets/images/common/fish-img2.png);
+	background-image: url(../images/common/fish-img2.png);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -2089,7 +2267,6 @@ body {
 }
 
 .sub-blog__detail-content ul li::before {
-	background-image: url(/assets/images/common/blog-detail.png);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -2123,6 +2300,7 @@ body {
 	box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
 	display: flex;
 	flex-direction: column;
+	height: 100%;
 }
 
 .sub-campaign-card__img img {
@@ -2317,7 +2495,7 @@ body {
 }
 
 .sub-illustration::after {
-	background-image: url(/assets/images/common/fish-img2.png);
+	background-image: url(../images/common/fish-img2.png);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -2456,7 +2634,7 @@ body {
 }
 
 .sub-voice__pagination {
-	margin-top: 4.375rem;
+	margin-top: 5rem;
 }
 
 .tab {
@@ -2633,10 +2811,6 @@ body {
 	padding-top: 1.5rem;
 }
 
-.voice-card:hover {
-	opacity: 0.7;
-}
-
 .voice-card__head {
 	display: flex;
 	gap: 0.8125rem;
@@ -2657,6 +2831,7 @@ body {
 	display: inline-block;
 	font-size: 0.75rem;
 	line-height: 1.83;
+	margin-left: auto;
 	padding-bottom: 0.25rem;
 	padding-left: 0.75rem;
 	padding-right: 0.75rem;
@@ -3012,6 +3187,10 @@ html {
 	margin-top: 10rem;
 }
 
+body:not(.error404) .top-footer {
+	margin-top: 10rem;
+}
+
 .top-information {
 	margin-top: 10rem;
 }
@@ -3025,6 +3204,7 @@ html {
 }
 
 .about-illustration::after {
+	background-image: url(../images/common/coral.png);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
@@ -3111,7 +3291,7 @@ html {
 }
 
 .blog-illustration::before {
-	background-image: url(/assets/images/common/blog-fish.png);
+	background-image: url(../images/common/blog-fish.png);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -3129,7 +3309,7 @@ html {
 }
 
 .blog::after {
-	background-image: url(/assets/images/common/blog-bg.png);
+	background-image: url(../images/common/blog-bg.png);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -3225,11 +3405,11 @@ html {
 }
 
 .swiper-button-prev::after {
-	background-image: url(/assets/images/common/prev.png);
+	background-image: url(../images/common/prev.png);
 }
 
 .swiper-button-next::after {
-	background-image: url(/assets/images/common/next.png);
+	background-image: url(../images/common/next.png);
 }
 
 .campaign__link {
@@ -3532,6 +3712,7 @@ html {
 }
 
 .price-illustration::after {
+	background-image: url(../images/common/fish-img1.png);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -3541,6 +3722,10 @@ html {
 	left: calc(50% - min(48vw, 38.75rem));
 	position: absolute;
 	width: 27.3125rem;
+}
+
+.price-table {
+	width: 71.51%;
 }
 
 .price-table th {
@@ -3553,23 +3738,14 @@ html {
 }
 
 .display-pc {
+	align-items: center;
 	background-color: #408F95;
 	color: #fff;
-	display: table-cell;
-}
-
-.display-pc span::after {
-	background-image: url(/assets/images/common/table-icon.png);
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	content: "";
-	height: 4rem;
-	left: 50%;
-	position: absolute;
-	top: 2rem;
-	transform: translateX(-50%);
-	width: 4rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	justify-content: center;
+	width: 28.49%;
 }
 
 .tbody tr td {
@@ -3977,6 +4153,7 @@ html {
 }
 
 .voice-illustration::before {
+	background-image: url(../images/common/fish-img2.png);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
@@ -3989,6 +4166,7 @@ html {
 }
 
 .voice-illustration::after {
+	background-image: url(../images/common/shehorse.png);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;

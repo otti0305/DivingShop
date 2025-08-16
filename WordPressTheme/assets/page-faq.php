@@ -13,61 +13,23 @@
   </div>
 
   <!-- パンくず -->
-  <nav class="breadcrumb layout-breadcrumb">
-    <div class="breadcrumb__inner inner">
-      <ul class="breadcrumb__lists">
-        <li class="breadcrumb__list"><a href="index.html">TOP</a></li>
-        <li class="breadcrumb__list"><img img src="<?php echo get_theme_file_uri(); ?>/images/common/breadcrumb-arrow.png" alt=""></li>
-        <li class="breadcrumb__list">よくある質問</li>
-      </ul>
-    </div>
-  </nav>
+  <?php get_template_part('template-parts/breadcrumb') ?>
 
   <div class="faq sub-faq sub-illustration">
     <div class="faq__inner inner">
       <div class="faq__content accordion-contents">
+        <?php
+        $faq_group = SCF::get('faq_group');
+        if (!empty($faq_group)) :
+          foreach ($faq_group as $faq) :
+        ?>
         <div class="accordion-contents__item">
           <div class="accordion">
-            <div class="accordion__header">ここに質問が入ります。</div>
-            <p class="accordion__text">ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります</p>
+            <div class="accordion__header"><?php echo esc_html($faq['question']); ?></div>
+            <p class="accordion__text"> <?php echo wp_kses_post($faq['answer']); ?></p>
           </div>
         </div>
-        <div class="accordion-contents__item">
-          <div class="accordion">
-            <div class="accordion__header">ここに質問が入ります。</div>
-            <p class="accordion__text">ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります</p>
-          </div>
-        </div>
-        <div class="accordion-contents__item">
-          <div class="accordion">
-            <div class="accordion__header">ここに質問が入ります。</div>
-            <p class="accordion__text">ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります</p>
-          </div>
-        </div>
-        <div class="accordion-contents__item">
-          <div class="accordion">
-            <div class="accordion__header">ここに質問が入ります。</div>
-            <p class="accordion__text">ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります</p>
-          </div>
-        </div>
-        <div class="accordion-contents__item">
-          <div class="accordion">
-            <div class="accordion__header">ここに質問が入ります。</div>
-            <p class="accordion__text">ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります</p>
-          </div>
-        </div>
-        <div class="accordion-contents__item">
-          <div class="accordion">
-            <div class="accordion__header">ここに質問が入ります。</div>
-            <p class="accordion__text">ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります</p>
-          </div>
-        </div>
-        <div class="accordion-contents__item">
-          <div class="accordion">
-            <div class="accordion__header">ここに質問が入ります。</div>
-            <p class="accordion__text">ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります</p>
-          </div>
-        </div>
+        <?php endforeach; endif; ?>
       </div>
     </div>
   </div>
@@ -99,7 +61,7 @@
           </div>
           <p class="contact__form-text">ご予約・お問い合わせはコチラ</p>
           <div class="contact__link">
-            <a href="#" class="view-link">
+            <a href="<?= esc_url(get_permalink(get_page_by_path('contact'))); ?>" class="view-link">
               <div class="view-link__content">
                 <div class="view-link__title">Contact us</div>
                 <div class="view-link__icon"></div>
